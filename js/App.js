@@ -1,19 +1,11 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react'
 
-import Temp from './components/temp'
+import AppNavigator from './navigation/AppNavigator'
 
 const App = () => {
   return (
-    <Temp />
+		<AppNavigator />
   );
 };
 
-export default App;
+export default App

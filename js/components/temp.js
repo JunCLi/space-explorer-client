@@ -1,12 +1,14 @@
 import React from 'react'
 
-import { SafeAreaView, ScrollView, View, Text, StatusBar } from 'react-native'
+import { SafeAreaView, ScrollView, View, Text, TouchableOpacity, StatusBar } from 'react-native'
 
 import { Header, LearnMoreLinks, DebugInstructions, ReloadInstructions } from 'react-native/Libraries/NewAppScreen'
 
 import { defaultStyles } from './tempStyles'
 
-const Temp = () => {
+const Temp = props => {
+
+
 	return (
 		<>
       <StatusBar barStyle="dark-content" />
@@ -19,8 +21,18 @@ const Temp = () => {
             <View style={defaultStyles.engine}>
               <Text style={defaultStyles.footer}>Engine: Hermes</Text>
             </View>
-          )}
+					)}
           <View style={defaultStyles.body}>
+
+						<TouchableOpacity onPress={() => props.navigation.navigate('App')}>
+							<View>
+								<Text>
+									{console.log(props)}
+									Swap Stacks
+								</Text>
+							</View>
+						</TouchableOpacity>
+
             <View style={defaultStyles.sectionContainer}>
               <Text style={defaultStyles.sectionTitle}>Step One</Text>
               <Text style={defaultStyles.sectionDescription}>
