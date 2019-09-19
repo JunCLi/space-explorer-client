@@ -1,12 +1,13 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 
-import Temp from '../components/Temp'
-import Test from '../components/Test'
+import AuthStack from './AuthStack'
+import AppStack from './AppStack'
+import AuthLoading from '../components/authLoading/AuthLoading'
 
 export default createAppContainer(
 	createSwitchNavigator({
-		AuthLoading: Temp,
-		App: Test,
-		Auth: Temp,
+		AuthLoading: AuthLoading,
+		Auth: AuthStack,
+		App: AppStack,
 	})
 )

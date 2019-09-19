@@ -23,16 +23,6 @@ const Temp = props => {
             </View>
 					)}
           <View style={defaultStyles.body}>
-
-						<TouchableOpacity onPress={() => props.navigation.navigate('App')}>
-							<View>
-								<Text>
-									{console.log(props)}
-									Swap Stacks
-								</Text>
-							</View>
-						</TouchableOpacity>
-
             <View style={defaultStyles.sectionContainer}>
               <Text style={defaultStyles.sectionTitle}>Step One</Text>
               <Text style={defaultStyles.sectionDescription}>
