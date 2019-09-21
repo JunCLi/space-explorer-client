@@ -1,8 +1,12 @@
 import React from 'react'
 
-import { SafeAreaView, Text, TouchableOpacity } from 'react-native'
+import { Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 
-const AuthLoading = props => {
+import { backgroundStyles } from '../../stylesheets/generalStyles'
+import { welcomeStyles } from '../../stylesheets/authentication/authenticationStyles'
+
+const Welcome = props => {
+
 	const handleNavigateAuthentication = () => {
 		props.navigation.navigate('Signup')
 	}
@@ -12,22 +16,27 @@ const AuthLoading = props => {
 	}
 
 	return (
-		<SafeAreaView>
-			<Text>This is the first screen in the authentication stack.</Text>
+		<SafeAreaView style={backgroundStyles.background}>
+			<ScrollView style={backgroundStyles.container}>
+				<View style={welcomeStyles.imageContainer}>
+					<Image
+						source={require('../../assets/images/saturn-transparent.png')}
+						style={welcomeStyles.image}
+					/>
+				</View>
+				<Text style={welcomeStyles.welcomeText}>Welcome to space explorer!</Text>
 
-			<Text>Welcome to space explorer!</Text>
-			<Text>Sign up</Text>
-			<Text>Log In</Text>
+				<TouchableOpacity onPress={handleNavigateAuthentication}>
+					<Text>Go to Sign Up Stack</Text>
+				</TouchableOpacity>
 
-			<TouchableOpacity onPress={handleNavigateAuthentication}>
-				<Text>Go to Sign Up Stack</Text>
-			</TouchableOpacity>
+				<TouchableOpacity onPress={handleNavigateApp}>
+					<Text>Go to Log In Stack</Text>
+				</TouchableOpacity>
 
-			<TouchableOpacity onPress={handleNavigateApp}>
-				<Text>Go to Log In Stack</Text>
-			</TouchableOpacity>
+			</ScrollView>
 		</SafeAreaView>
 	)
 }
 
-export default AuthLoading
+export default Welcome
