@@ -14,19 +14,19 @@ const AuthStack = createStackNavigator({
     }),
 	},
 
-	Signup: {
-		screen: Signup,
-		navigationOptions: () => ({
-			title: `Signup`,
-    }),
-	},
+	// Signup: {
+	// 	screen: Signup,
+	// 	navigationOptions: () => ({
+	// 		title: `Signup`,
+  //   }),
+	// },
 
-	Login: {
-		screen: Login,
-		navigationOptions: () => ({
-			title: `Login`,
-    }),
-	},
+	// Login: {
+	// 	screen: Login,
+	// 	navigationOptions: () => ({
+	// 		title: `Login`,
+  //   }),
+	// },
 },{
 	initialRouteName: 'Welcome',
 })

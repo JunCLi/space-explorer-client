@@ -6,8 +6,7 @@ const screenWidth = Dimensions.get('window').width
 const determineFontSize = screenWidth => {
 	let baseFontSize = 12
 
-	if (screenWidth >= 400) { baseFontSize = 24 }
-	else if (screenWidth >= 360) { baseFontSize = 16 }
+	if (screenWidth >= 360) { baseFontSize = 16 }
 	
 	return baseFontSize
 }

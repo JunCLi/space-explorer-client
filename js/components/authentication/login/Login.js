@@ -1,12 +1,17 @@
 import React from 'react'
 
-import { SafeAreaView, Text, TouchableOpacity } from 'react-native'
+import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native'
+
+import LoginForm from './LoginForm'
+
+import { loginFormStyles } from '../../../stylesheets/authentication/authenticationStyles'
 
 const Login = () => {
 	return (
-		<SafeAreaView>
-			<Text>Login Screen</Text>
-		</SafeAreaView>
+		<View style={loginFormStyles.mainContainer}>
+			<LoginForm />
+			<Text style={loginFormStyles.forgotPassword}>Forgot your password?</Text>
+		</View>
 	)
 }
 
