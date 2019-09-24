@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native'
 
 import { baseFont } from '../screenSizeSettings'
-import { white, lightGrey } from '../fontColours'
+import { darkerBackgroundPurple, whiteFont, lightGreyFont, greyFont } from '../colours'
 
 
 const screenHeight = Dimensions.get('window').height
@@ -10,14 +10,14 @@ const screenWidth = Dimensions.get('window').width
 export const welcomeStyles = StyleSheet.create({
 	welcomeText: {
 		marginTop: -30,
-		color: white,
+		color: whiteFont,
 		fontSize: baseFont * 2,
 		lineHeight: baseFont * 2,
 		textAlign: 'center',
 	},
 
 	text: {
-		color: white,
+		color: whiteFont,
 		fontSize: baseFont,
 	},
 
@@ -39,7 +39,7 @@ export const welcomeStyles = StyleSheet.create({
 	},
 
 	swapFormText: {
-		color: lightGrey,
+		color: lightGreyFont,
 		fontSize: baseFont,
 		textAlign: 'center',
 	}
@@ -58,18 +58,30 @@ export const loginFormStyles = StyleSheet.create({
 
 	input: {
 		marginLeft: -24,
-		color: white,
+		color: whiteFont,
 		fontSize: baseFont,
 		textAlign: 'center',
 	},
 
 	icon: {
-		color: white,
+		color: whiteFont,
+	},
+
+	button: {
+		backgroundColor: 'teal',
+	},
+
+	disabledButton: {
+		backgroundColor: darkerBackgroundPurple,
+	},
+
+	disabledButtonTitle: {
+		color: whiteFont,
 	},
 
 	forgotPassword: {
-		marginTop: -10,
-		color: lightGrey,
+		marginTop: 8,
+		color: lightGreyFont,
 		fontSize: baseFont / 1.1
 	}
 })

@@ -1,12 +1,17 @@
 import React from 'react'
 
 import { View, Text, TextInput } from 'react-native'
-import { Icon, Input } from 'react-native-elements'
+import { Button, Icon, Input } from 'react-native-elements'
 import { Formik } from 'formik'
+
+import { useMutation } from 'react-apollo-hooks'
+import { LOGIN } from '../../../gql/authQueries'
 
 import { loginFormStyles } from '../../../stylesheets/authentication/authenticationStyles'
 
 const LoginForm = () => {
+
+	const login = useMutation(LOGIN)
 
 	const initialFormValues = {
 		email: '',
@@ -19,8 +24,23 @@ const LoginForm = () => {
 			onSubmit={async (values, { setSubmitting }) => {
 				try {
 					console.log(values)
+					const result = await login[0]({
+						variables: {input: {
+							email: values.email,
+							password: values.password,
+						}}
+					})
+
+					console.log('result', result)
+					if (result.data.login.message === 'success') {
+						// props.history.push('/')
+						// window.location.reload()
+						console.log('successfully logged in')
+					}
 				} catch(err) {
 					throw err
+				} finally {
+					setSubmitting(false)
 				}
 			}}
 		>
@@ -43,6 +63,7 @@ const LoginForm = () => {
 						<View>
 							<Input
 								value={values.email}
+								keyboardType='email-address'
 								onChangeText={handleChange('email')}
 								placeholder='Email'
 								placeholderTextColor='white'
@@ -60,7 +81,7 @@ const LoginForm = () => {
 							/>
 						</View>
 						<View>
-						<Input
+							<Input
 								value={values.password}
 								onChangeText={handleChange('password')}
 								placeholder='Password'
@@ -76,6 +97,16 @@ const LoginForm = () => {
 									/>
 								}
 								leftIconContainerStyle={{marginLeft: 0}}
+							/>
+						</View>
+						<View>
+							<Button
+								title='Login'
+								buttonStyle={loginFormStyles.button}
+								onPress={handleSubmit}
+								disabled={!dirty || isSubmitting}
+								disabledStyle={loginFormStyles.disabledButton}
+								disabledTitleStyle={loginFormStyles.disabledButtonTitle}
 							/>
 						</View>
 					</View>

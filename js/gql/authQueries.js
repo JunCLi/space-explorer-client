@@ -16,3 +16,11 @@ export const TEST_2 = gql`
 		}
 	}
 `
+
+export const LOGIN = gql`
+	mutation login($input: LoginObject!){
+		login(input: $input) {
+			message
+		}
+	}
+`
