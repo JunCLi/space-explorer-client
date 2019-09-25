@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { View, Text, TextInput } from 'react-native'
+import {  View, Text, TextInput } from 'react-native'
 import { Button, Icon, Input } from 'react-native-elements'
 import { Formik } from 'formik'
 
 import { useMutation } from 'react-apollo-hooks'
 import { LOGIN } from '../../../gql/authQueries'
 
-import { loginFormStyles } from '../../../stylesheets/authentication/authenticationStyles'
+import { loginFormStyles } from '../../../stylesheets/authentication/formStyles'
 
 const LoginForm = () => {
 
@@ -23,19 +23,14 @@ const LoginForm = () => {
 			initialValues={initialFormValues}
 			onSubmit={async (values, { setSubmitting }) => {
 				try {
-					console.log(values)
 					const result = await login[0]({
 						variables: {input: {
 							email: values.email,
 							password: values.password,
 						}}
 					})
-
-					console.log('result', result)
 					if (result.data.login.message === 'success') {
-						// props.history.push('/')
-						// window.location.reload()
-						console.log('successfully logged in')
+						console.log('success')
 					}
 				} catch(err) {
 					throw err
@@ -60,7 +55,7 @@ const LoginForm = () => {
 
 				return (
 					<View>
-						<View>
+						<View style={loginFormStyles.inputViewContainer}>
 							<Input
 								value={values.email}
 								keyboardType='email-address'
@@ -68,7 +63,7 @@ const LoginForm = () => {
 								placeholder='Email'
 								placeholderTextColor='white'
 								editable={true}
-								inputStyle={loginFormStyles.input}
+								inputStyle={loginFormStyles.inputWithIcon}
 								containerStyle={loginFormStyles.inputContainer}
 								leftIcon={
 									<Icon
@@ -80,14 +75,14 @@ const LoginForm = () => {
 								leftIconContainerStyle={{marginLeft: 0}}
 							/>
 						</View>
-						<View>
+						<View style={loginFormStyles.inputViewContainer}>
 							<Input
 								value={values.password}
 								onChangeText={handleChange('password')}
 								placeholder='Password'
 								placeholderTextColor='white'
 								editable={true}
-								inputStyle={loginFormStyles.input}
+								inputStyle={loginFormStyles.inputWithIcon}
 								containerStyle={loginFormStyles.inputContainer}
 								leftIcon={
 									<Icon
@@ -99,6 +94,7 @@ const LoginForm = () => {
 								leftIconContainerStyle={{marginLeft: 0}}
 							/>
 						</View>
+
 						<View>
 							<Button
 								title='Login'

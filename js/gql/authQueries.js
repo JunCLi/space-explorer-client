@@ -17,9 +17,17 @@ export const TEST_2 = gql`
 	}
 `
 
+export const SIGNUP = gql`
+	mutation signup($input: SignupObject!){
+		signup(input: $input){
+			message
+		}
+	}
+`
+
 export const LOGIN = gql`
 	mutation login($input: LoginObject!){
-		login(input: $input) {
+		login(input: $input){
 			message
 		}
 	}

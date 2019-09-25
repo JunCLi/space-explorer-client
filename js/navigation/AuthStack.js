@@ -1,34 +1,36 @@
 import { createStackNavigator } from 'react-navigation-stack'
 
 
-import Welcome from '../components/authentication/Welcome'
-import Signup from '../components/authentication/signup/Signup'
 import Login from '../components/authentication/login/Login'
+import Signup from '../components/authentication/signup/Signup'
+import SuccessfulSignup from '../components/authentication/signup/SuccessfulSignup'
 
 const AuthStack = createStackNavigator({
-	Welcome: {
-		screen: Welcome,
+	Login: {
+		screen: Login,
 		navigationOptions: () => ({
-			title: `Welcome`,
+			title: `Login`,
 			header: null,
     }),
 	},
 
-	// Signup: {
-	// 	screen: Signup,
-	// 	navigationOptions: () => ({
-	// 		title: `Signup`,
-  //   }),
-	// },
+	Signup: {
+		screen: Signup,
+		navigationOptions: () => ({
+			title: `Signup`,
+			header: null,
+    }),
+	},
 
-	// Login: {
-	// 	screen: Login,
-	// 	navigationOptions: () => ({
-	// 		title: `Login`,
-  //   }),
-	// },
+	SuccessfulSignup: {
+		screen: SuccessfulSignup,
+		navigationOptions: () => ({
+			title: 'Signup',
+			header: null,
+		})
+	},
 },{
-	initialRouteName: 'Welcome',
+	initialRouteName: 'Signup',
 })
 
 export default AuthStack
