@@ -3,11 +3,10 @@ import React from 'react'
 import { Platform, KeyboardAvoidingView, Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View, StatusBar } from 'react-native'
 
 import LoginForm from './LoginForm'
-import Logo from '../../util/Logo'
-import SaturnImage from '../../../assets/images/saturn-transparent.png'
+import LogoWithText from '../../util/Logo/LogoWithText'
 
 import { backgroundStyles } from '../../../stylesheets/generalStyles'
-import { loginStyles } from '../../../stylesheets/authentication/signupLoginStyles'
+import { sharedStyles, loginStyles } from '../../../stylesheets/authentication/signupLoginStyles'
 
 const Login = props => {
 	const handleGoSignup = () => {
@@ -23,13 +22,11 @@ const Login = props => {
 				<StatusBar barStyle='light-content' />
 
 				<ScrollView style={backgroundStyles.container} contentContainerStyle={{flexGrow: 1}}>
-					<View style={loginStyles.imageContainer}>
-						<Logo size={100} />
-					</View>
+					{/* <View style={loginStyles.imageContainer}> */}
+						<LogoWithText size={100} containerStyle={loginStyles.imageContainer} />
+					{/* </View> */}
 
-					<Text style={loginStyles.welcomeText}>Space explorer</Text>
-
-					<LoginForm /> 
+					<LoginForm {...props} /> 
 
 					<View style={loginStyles.bottomTextContainer}>
 						<TouchableOpacity onPress={handleGoSignup}>

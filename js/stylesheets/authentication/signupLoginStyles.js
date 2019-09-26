@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { screenHeight, baseFont } from '../screenSizeSettings'
+import { screenHeight, baseFont, screenWidth } from '../screenSizeSettings'
 import { whiteFont, lightGreyFont } from '../colours'
 
 export const sharedStyles = StyleSheet.create({
@@ -44,4 +44,27 @@ export const loginStyles = StyleSheet.create({
 
 export const signupStyles = StyleSheet.create({
 	...sharedStyles,
+})
+
+export const successfulSignupStyles = StyleSheet.create({
+	...sharedStyles,
+	
+	mainContainer: {
+		marginHorizontal: screenWidth / 10,
+	},
+
+	messageContainer: {
+		marginVertical: screenHeight / 12,
+	},
+
+	text: {
+		marginVertical: baseFont,
+		color: whiteFont,
+		fontSize: baseFont * 1.5,
+		textAlign: 'center',
+	},
+
+	button: {
+		backgroundColor: 'teal'
+	}
 })

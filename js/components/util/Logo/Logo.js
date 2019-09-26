@@ -2,10 +2,10 @@ import React from 'react'
 
 import { StyleSheet, Text, View } from 'react-native'
 
-import { backgroundPurple } from '../../stylesheets/colours'
+import { backgroundPurple } from '../../../stylesheets/colours'
 
 const Logo = props => {
-	const { size } = props
+	const { size = 100 } = props
 
 
 	const logoStyles = StyleSheet.create({

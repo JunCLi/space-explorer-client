@@ -3,8 +3,7 @@ import React from 'react'
 import { Platform, KeyboardAvoidingView, Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View, StatusBar } from 'react-native'
 
 import SignupForm from './SignupForm'
-import Logo from '../../util/Logo'
-import SaturnImage from '../../../assets/images/saturn-transparent.png'
+import LogoWithText from '../../util/Logo/LogoWithText'
 
 import { backgroundStyles } from '../../../stylesheets/generalStyles'
 import { signupStyles } from '../../../stylesheets/authentication/signupLoginStyles'
@@ -23,11 +22,8 @@ const Signup = props => {
 				<StatusBar barStyle='light-content' />
 
 				<ScrollView style={backgroundStyles.container} contentContainerStyle={{flexGrow: 1}}>
-					<View style={signupStyles.imageContainer}>
-						<Logo size={100} />
-					</View>
-
-					<Text style={signupStyles.welcomeText}>Space explorer</Text>
+					
+					<LogoWithText size={100} containerStyle={signupStyles.imageContainer} />
 
 					<SignupForm {...props} /> 
 

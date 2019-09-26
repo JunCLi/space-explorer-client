@@ -1,10 +1,11 @@
 import { createBottomTabNavigator } from 'react-navigation-tabs'
 
 import Temp from '../components/Temp'
+import Home from '../components/home/Home'
 
 const AppStack = createBottomTabNavigator({
 	Home: {
-		screen: Temp,
+		screen: Home,
 	},
 
 	Test1: {

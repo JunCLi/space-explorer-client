@@ -9,7 +9,7 @@ import { LOGIN } from '../../../gql/authQueries'
 
 import { loginFormStyles } from '../../../stylesheets/authentication/formStyles'
 
-const LoginForm = () => {
+const LoginForm = props => {
 
 	const login = useMutation(LOGIN)
 
@@ -30,7 +30,7 @@ const LoginForm = () => {
 						}}
 					})
 					if (result.data.login.message === 'success') {
-						console.log('success')
+						props.navigation.navigate('Home')
 					}
 				} catch(err) {
 					throw err
@@ -63,6 +63,7 @@ const LoginForm = () => {
 								placeholder='Email'
 								placeholderTextColor='white'
 								editable={true}
+								autoCompleteType='email'
 								inputStyle={loginFormStyles.inputWithIcon}
 								containerStyle={loginFormStyles.inputContainer}
 								leftIcon={
@@ -82,6 +83,8 @@ const LoginForm = () => {
 								placeholder='Password'
 								placeholderTextColor='white'
 								editable={true}
+								autoCompleteType='password'
+								secureTextEntry={true}
 								inputStyle={loginFormStyles.inputWithIcon}
 								containerStyle={loginFormStyles.inputContainer}
 								leftIcon={

@@ -67,6 +67,7 @@ const SignupForm = props => {
 								placeholder='Email'
 								placeholderTextColor='white'
 								editable={true}
+								autoCompleteType='email'
 								inputStyle={signupFormStyles.inputWithIcon}
 								containerStyle={signupFormStyles.inputContainer}
 								leftIcon={
@@ -86,6 +87,8 @@ const SignupForm = props => {
 								placeholder='Password'
 								placeholderTextColor='white'
 								editable={true}
+								autoCompleteType='password'
+								secureTextEntry={true}
 								inputStyle={signupFormStyles.inputWithIcon}
 								containerStyle={signupFormStyles.inputContainer}
 								leftIcon={
@@ -105,6 +108,8 @@ const SignupForm = props => {
 								placeholder='Confirm Password'
 								placeholderTextColor='white'
 								editable={true}
+								autoCompleteType='password'
+								secureTextEntry={true}
 								inputStyle={signupFormStyles.inputWithIcon}
 								containerStyle={signupFormStyles.inputContainer}
 								leftIcon={
