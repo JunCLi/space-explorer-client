@@ -5,7 +5,7 @@ import { Platform, KeyboardAvoidingView, Image, SafeAreaView, ScrollView, Text, 
 import Logo from '../../util/Logo'
 
 import { backgroundStyles } from '../../../stylesheets/generalStyles'
-import { loginStyles } from '../../../stylesheets/authentication/authenticationStyles'
+import { loginStyles } from '../../../stylesheets/authentication/signupLoginStyles'
 
 const SuccessfulSignup = props => {
 	return (

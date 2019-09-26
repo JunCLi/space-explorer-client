@@ -58,7 +58,7 @@ const SignupForm = props => {
 				} = formikProps
 
 				return (
-					<View>
+					<View style={signupFormStyles.mainContainer}>
 						<View style={signupFormStyles.inputViewContainer}>
 							<Input
 								value={values.email}

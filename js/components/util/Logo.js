@@ -13,6 +13,7 @@ const Logo = props => {
 			position: 'relative',
 			justifyContent: 'center',
 			alignItems: 'center',
+			alignSelf: 'center',
 
 			width: size + size / 3,
 			height: size + size / 3,

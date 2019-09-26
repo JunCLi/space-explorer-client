@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {  View, Text, TextInput } from 'react-native'
+import {  View, Text, TouchableOpacity } from 'react-native'
 import { Button, Icon, Input } from 'react-native-elements'
 import { Formik } from 'formik'
 
@@ -54,7 +54,7 @@ const LoginForm = () => {
 				} = formikProps
 
 				return (
-					<View>
+					<View style={loginFormStyles.mainContainer}>
 						<View style={loginFormStyles.inputViewContainer}>
 							<Input
 								value={values.email}
@@ -105,6 +105,10 @@ const LoginForm = () => {
 								disabledTitleStyle={loginFormStyles.disabledButtonTitle}
 							/>
 						</View>
+
+						<TouchableOpacity>
+							<Text style={loginFormStyles.forgotPassword}>Forgot your password?</Text>
+						</TouchableOpacity>
 					</View>
 				)
 			}}

@@ -3,10 +3,11 @@ import React from 'react'
 import { Platform, KeyboardAvoidingView, Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View, StatusBar } from 'react-native'
 
 import SignupForm from './SignupForm'
+import Logo from '../../util/Logo'
 import SaturnImage from '../../../assets/images/saturn-transparent.png'
 
 import { backgroundStyles } from '../../../stylesheets/generalStyles'
-import { welcomeStyles, signupStyles, loginFormStyles } from '../../../stylesheets/authentication/authenticationStyles'
+import { signupStyles } from '../../../stylesheets/authentication/signupLoginStyles'
 
 const Signup = props => {
 	const handleGoLogin = () => {
@@ -20,22 +21,19 @@ const Signup = props => {
 		>
 			<SafeAreaView style={backgroundStyles.background}>
 				<StatusBar barStyle='light-content' />
-				
+
 				<ScrollView style={backgroundStyles.container} contentContainerStyle={{flexGrow: 1}}>
 					<View style={signupStyles.imageContainer}>
-						<Image
-							source={SaturnImage}
-							style={signupStyles.image}
-						/>
+						<Logo size={100} />
 					</View>
 
-					<View style={loginFormStyles.mainContainer}>
-						<SignupForm {...props} /> 
-					</View>
+					<Text style={signupStyles.welcomeText}>Space explorer</Text>
 
-					<View style={welcomeStyles.bottomTextContainer}>
+					<SignupForm {...props} /> 
+
+					<View style={signupStyles.bottomTextContainer}>
 						<TouchableOpacity onPress={handleGoLogin}>
-							<Text style={welcomeStyles.swapFormText}>Already have an account? Log in</Text>
+							<Text style={signupStyles.swapFormText}>Already have an account? Log in</Text>
 						</TouchableOpacity>
 					</View>
 				</ScrollView>

@@ -52,6 +52,11 @@ export const formStyles = StyleSheet.create({
 export const loginFormStyles = StyleSheet.create({
 	...formStyles,
 
+	mainContainer: {
+		marginTop: screenHeight / 8,
+		marginHorizontal: screenWidth / 10,
+	},
+
 	forgotPassword: {
 		marginTop: 8,
 		color: lightGreyFont,

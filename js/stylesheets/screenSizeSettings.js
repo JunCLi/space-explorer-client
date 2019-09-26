@@ -1,7 +1,7 @@
 import { Dimensions } from 'react-native'
 
-const screenHeight = Dimensions.get('window').height
-const screenWidth = Dimensions.get('window').width
+export const screenHeight = Dimensions.get('window').height
+export const screenWidth = Dimensions.get('window').width
 
 const determineFontSize = screenWidth => {
 	let baseFontSize = 12
@@ -10,8 +10,6 @@ const determineFontSize = screenWidth => {
 	
 	return baseFontSize
 }
-
-export const baseFont = determineFontSize(screenWidth)
 
 const determineSideMargins = screenWidth => {
 	let baseMargin = 8
@@ -22,4 +20,5 @@ const determineSideMargins = screenWidth => {
 	return baseMargin
 }
 
+export const baseFont = determineFontSize(screenWidth)
 export const baseSideMargins = determineSideMargins(screenWidth)

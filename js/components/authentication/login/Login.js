@@ -3,10 +3,11 @@ import React from 'react'
 import { Platform, KeyboardAvoidingView, Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View, StatusBar } from 'react-native'
 
 import LoginForm from './LoginForm'
+import Logo from '../../util/Logo'
 import SaturnImage from '../../../assets/images/saturn-transparent.png'
 
 import { backgroundStyles } from '../../../stylesheets/generalStyles'
-import { welcomeStyles, loginStyles, loginFormStyles } from '../../../stylesheets/authentication/authenticationStyles'
+import { loginStyles } from '../../../stylesheets/authentication/signupLoginStyles'
 
 const Login = props => {
 	const handleGoSignup = () => {
@@ -20,27 +21,19 @@ const Login = props => {
 		>
 			<SafeAreaView style={backgroundStyles.background}>
 				<StatusBar barStyle='light-content' />
-				
+
 				<ScrollView style={backgroundStyles.container} contentContainerStyle={{flexGrow: 1}}>
 					<View style={loginStyles.imageContainer}>
-						<Image
-							source={SaturnImage}
-							style={loginStyles.image}
-						/>
+						<Logo size={100} />
 					</View>
 
-					<Text style={welcomeStyles.welcomeText}>Space explorer</Text>
+					<Text style={loginStyles.welcomeText}>Space explorer</Text>
 
-					<View style={loginFormStyles.mainContainer}>
-						<LoginForm /> 
-						<TouchableOpacity>
-							<Text style={loginFormStyles.forgotPassword}>Forgot your password?</Text>
-						</TouchableOpacity>
-					</View>
+					<LoginForm /> 
 
-					<View style={welcomeStyles.bottomTextContainer}>
+					<View style={loginStyles.bottomTextContainer}>
 						<TouchableOpacity onPress={handleGoSignup}>
-							<Text style={welcomeStyles.swapFormText}>Don't have an account? Create one</Text>
+							<Text style={loginStyles.swapFormText}>Don't have an account? Create one</Text>
 						</TouchableOpacity>
 					</View>
 				</ScrollView>
