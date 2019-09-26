@@ -30,7 +30,7 @@ const AuthStack = createStackNavigator({
 		})
 	},
 },{
-	initialRouteName: 'Signup',
+	initialRouteName: 'SuccessfulSignup',
 })
 
 export default AuthStack
