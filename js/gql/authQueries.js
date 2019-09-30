@@ -12,6 +12,15 @@ export const LOGIN = gql`
 	mutation login($input: LoginObject!){
 		login(input: $input){
 			message
+			token
+		}
+	}
+`
+
+export const TEST_AUTHENTICATION = gql`
+	query getLoggedUser {
+		getLoggedUser {
+			user_id
 		}
 	}
 `

@@ -10,7 +10,6 @@ import { LOGIN } from '../../../gql/authQueries'
 import { loginFormStyles } from '../../../stylesheets/authentication/formStyles'
 
 const LoginForm = props => {
-
 	const login = useMutation(LOGIN)
 
 	const initialFormValues = {
