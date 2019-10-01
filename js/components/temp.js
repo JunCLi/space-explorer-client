@@ -13,7 +13,7 @@ const Temp = props => {
 		<>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <ScrollView
+        {/* <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={defaultStyles.scrollView}>
           <Header />
@@ -50,7 +50,7 @@ const Temp = props => {
             </View>
             <LearnMoreLinks />
           </View>
-        </ScrollView>
+        </ScrollView> */}
       </SafeAreaView>
 		</>
 	)

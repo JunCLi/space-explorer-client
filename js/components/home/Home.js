@@ -1,11 +1,13 @@
 import React from 'react'
 
-import { Text, View } from 'react-native'
+import { SafeAreaView, StatusBar, Text, View } from 'react-native'
 import { Button } from 'react-native-elements'
 
 import { useQuery, useMutation } from 'react-apollo-hooks'
 import { TEST_2 } from '../../gql/tripQueries'
 import { TEST_AUTHENTICATION } from '../../gql/authQueries'
+
+import { backgroundStyles } from '../../stylesheets/generalStyles'
 
 const Home = props => {
 	const { data, loading, error } = useQuery(TEST_AUTHENTICATION)
@@ -30,14 +32,15 @@ const Home = props => {
 	console.log('data', data)
 
 	return (
-		<View>
+		<SafeAreaView style={backgroundStyles.background}>
+				<StatusBar barStyle='light-content' />
 			<Text>Home</Text>
 
 			<Button 
 				title='logout'
 				onPress={handleLogout}
 			/>
-		</View>
+		</SafeAreaView>
 	)
 }
 
