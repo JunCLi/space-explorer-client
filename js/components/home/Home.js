@@ -6,8 +6,14 @@ import { Button } from 'react-native-elements'
 import { useQuery, useMutation } from 'react-apollo-hooks'
 import { TEST_2 } from '../../gql/tripQueries'
 import { TEST_AUTHENTICATION } from '../../gql/authQueries'
+import { connect } from 'react-redux'
 
 import { backgroundStyles } from '../../stylesheets/generalStyles'
+
+const mapStateToProps = state => {
+	console.log('home state', state)
+	return state
+}
 
 const Home = props => {
 	const { data, loading, error } = useQuery(TEST_AUTHENTICATION)
@@ -29,7 +35,7 @@ const Home = props => {
 		</View>
 	)
 
-	console.log('data', data)
+	// console.log('data', data)
 
 	return (
 		<SafeAreaView style={backgroundStyles.background}>
@@ -40,8 +46,13 @@ const Home = props => {
 				title='logout'
 				onPress={handleLogout}
 			/>
+
+			<Button
+				title='check props'
+				onPress={() => console.log(props)}
+			/>
 		</SafeAreaView>
 	)
 }
 
-export default Home
+export default connect(mapStateToProps)(Home)

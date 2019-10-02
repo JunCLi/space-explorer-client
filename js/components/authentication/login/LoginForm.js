@@ -29,7 +29,7 @@ const LoginForm = props => {
 						}}
 					})
 					if (result.data.login.message === 'success') {
-						props.navigation.navigate('Home')
+						props.navigation.navigate('AuthLoading')
 					}
 				} catch(err) {
 					throw err
