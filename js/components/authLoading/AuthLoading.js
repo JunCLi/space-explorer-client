@@ -19,7 +19,7 @@ const mapStateToProps = state => {
 }
 
 const AuthLoading = props => {
-	const { data, loading, error } = useQuery(TEST_AUTHENTICATION, { fetchPolicy: "network-only" })
+	const { data , loading, error } = useQuery(TEST_AUTHENTICATION, { fetchPolicy: "network-only" })
 
 	const handleGoAuthentication = () => {
 		props.navigation.navigate('Auth')
@@ -36,12 +36,16 @@ const AuthLoading = props => {
 	}
 
 	useEffect(() => {
-		console.log('data', data)
 		if (!loading) {
 			if (!error) {
+				console.log('checkpoint A')
 				storeAuthentication(data.getLoggedUser)
+			} else if (props.navigation.state.params) {
+				console.log('checkpoint B')
+				console.log(props.navigation.state.params)
+				storeAuthentication(props.navigation.state.params.user)
 			}
-			// error ? handleGoAuthentication() : handleGoApp()
+			// !error || props.navigation.state.params ? handleGoApp() : handleGoAuthentication()
 		}
 	}, [data, loading, error])
 	
@@ -50,10 +54,11 @@ const AuthLoading = props => {
 			<StatusBar barStyle='light-content' />
 			<LogoWithText containerStyle={{marginTop: 300}} />
 
-			<Text onPress={() => props.storeAuthentication({id: 13, email: 'email@email.com'})}>press</Text>
+			<Text onPress={() => props.storeAuthentication(data.getLoggedUser)}>press</Text>
 			<Text onPress={() => console.log('show props', props)}>show props</Text>
 
 			<Text onPress={handleGoAuthentication}>go auth</Text>
+			<Text onPress={handleGoApp}>go App</Text>
 		</SafeAreaView>
 	)
 }

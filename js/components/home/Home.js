@@ -35,7 +35,7 @@ const Home = props => {
 		</View>
 	)
 
-	// console.log('data', data)
+	console.log('data', data)
 
 	return (
 		<SafeAreaView style={backgroundStyles.background}>

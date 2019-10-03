@@ -13,6 +13,12 @@ export const LOGIN = gql`
 		login(input: $input){
 			message
 			token
+			user {
+				user_id
+				email
+				first_name
+				last_name
+			}
 		}
 	}
 `
