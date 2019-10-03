@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Platform, KeyboardAvoidingView, Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View, StatusBar } from 'react-native'
+import { Platform, KeyboardAvoidingView, Image, SafeAreaView, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native'
 
 import LoginForm from './LoginForm'
 import LogoWithText from '../../util/Logo/LogoWithText'

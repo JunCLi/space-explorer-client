@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {  View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { Button, Icon, Input } from 'react-native-elements'
 import { Formik } from 'formik'
 
@@ -29,7 +29,9 @@ const LoginForm = props => {
 						}}
 					})
 					if (result.data.login.message === 'success') {
-						props.navigation.navigate('Home')
+						props.navigation.navigate('AuthLoading', {
+							user: result.data.login.user
+						})
 					}
 				} catch(err) {
 					throw err

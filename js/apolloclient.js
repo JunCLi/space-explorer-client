@@ -4,9 +4,9 @@ import { withClientState } from 'apollo-link-state'
 import { createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { onError } from 'apollo-link-error'
-import { getMainDefinition } from 'apollo-utilities';
-import { WebSocketLink } from 'apollo-link-ws';
-// import { createUploadLink } from 'apollo-upload-client';
+import { getMainDefinition } from 'apollo-utilities'
+import { WebSocketLink } from 'apollo-link-ws'
+// import { createUploadLink } from 'apollo-upload-client'
 // import { BatchHttpLink } from 'apollo-link-batch-http'
 
 const wsLink = new WebSocketLink({
