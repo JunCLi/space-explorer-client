@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { screenHeight, baseFont, screenWidth } from '../screenSizeSettings'
+import { baseFont, screenHeight, screenWidth } from '../screenSizeSettings'
 import { whiteFont, lightGreyFont } from '../colours'
 
 export const sharedStyles = StyleSheet.create({

@@ -24,11 +24,3 @@ export const TEST_1 = gql`
 		}
 	}
 `
-
-export const TEST_2 = gql`
-	mutation logout {
-		logout {
-			message
-		}
-	}
-`

@@ -5,8 +5,8 @@ import { Icon } from 'react-native-elements'
 
 import { backgroundPurple, whiteFont, lightGreyFont, greyFont } from '../stylesheets/colours'
 
-import Temp from '../components/Temp'
 import Home from '../components/home/Home'
+import Profile from '../components/profile/Profile'
 
 const AppStack = createBottomTabNavigator({
 	Home: {
@@ -30,7 +30,7 @@ const AppStack = createBottomTabNavigator({
 	},
 
 	Profile: {
-		screen: Home,
+		screen: Profile,
 		navigationOptions: () => ({
 			title: 'Profile',
 			tabBarIcon: ({ tintColor }) => (
@@ -40,13 +40,13 @@ const AppStack = createBottomTabNavigator({
 	},
 
 },{
-	initialRouteName: 'Home',
+	initialRouteName: 'Profile',
 	tabBarOptions: {
     activeTintColor: whiteFont,
     inactiveTintColor: greyFont,
 		style: {
 			backgroundColor: backgroundPurple,
-      borderTopWidth: 0,
+			borderTopWidth: 0,
 		},
 		labelStyle: {
       fontSize: 12,

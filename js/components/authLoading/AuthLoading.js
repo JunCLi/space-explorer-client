@@ -12,7 +12,6 @@ import { backgroundStyles } from '../../stylesheets/generalStyles'
 import LogoWithText from '../util/Logo/LogoWithText'
 
 const mapStateToProps = state => {
-	console.log('authloading state', state)
 	return {
 		state
 	}
@@ -38,14 +37,11 @@ const AuthLoading = props => {
 	useEffect(() => {
 		if (!loading) {
 			if (!error) {
-				console.log('checkpoint A')
 				storeAuthentication(data.getLoggedUser)
 			} else if (props.navigation.state.params) {
-				console.log('checkpoint B')
-				console.log(props.navigation.state.params)
 				storeAuthentication(props.navigation.state.params.user)
 			}
-			// !error || props.navigation.state.params ? handleGoApp() : handleGoAuthentication()
+			!error || props.navigation.state.params ? handleGoApp() : handleGoAuthentication()
 		}
 	}, [data, loading, error])
 	
@@ -54,14 +50,13 @@ const AuthLoading = props => {
 			<StatusBar barStyle='light-content' />
 			<LogoWithText containerStyle={{marginTop: 300}} />
 
-			<Text onPress={() => props.storeAuthentication(data.getLoggedUser)}>press</Text>
+			{/* <Text onPress={() => props.storeAuthentication(data.getLoggedUser)}>press</Text>
 			<Text onPress={() => console.log('show props', props)}>show props</Text>
 
 			<Text onPress={handleGoAuthentication}>go auth</Text>
-			<Text onPress={handleGoApp}>go App</Text>
+			<Text onPress={handleGoApp}>go App</Text> */}
 		</SafeAreaView>
 	)
 }
 
 export default connect(mapStateToProps, { storeAuthentication })(AuthLoading)
-// export default AuthLoading

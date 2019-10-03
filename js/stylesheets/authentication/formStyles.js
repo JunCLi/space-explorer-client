@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native'
 
 import { baseFont } from '../screenSizeSettings'
-import { darkerBackgroundPurple, whiteFont, lightGreyFont, greyFont } from '../colours'
+import { darkerBackgroundPurple, whiteFont, lightGreyFont, teal } from '../colours'
 
 const screenHeight = Dimensions.get('window').height
 const screenWidth = Dimensions.get('window').width
@@ -37,7 +37,7 @@ export const formStyles = StyleSheet.create({
 	},
 
 	button: {
-		backgroundColor: 'teal',
+		backgroundColor: teal,
 	},
 
 	disabledButton: {

@@ -23,6 +23,14 @@ export const LOGIN = gql`
 	}
 `
 
+export const LOGOUT = gql`
+	mutation logout {
+		logout {
+			message
+		}
+	}
+`
+
 export const TEST_AUTHENTICATION = gql`
 	query getLoggedUser {
 		getLoggedUser {

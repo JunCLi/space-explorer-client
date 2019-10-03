@@ -29,7 +29,6 @@ const LoginForm = props => {
 						}}
 					})
 					if (result.data.login.message === 'success') {
-						console.log(result.data.login)
 						props.navigation.navigate('AuthLoading', {
 							user: result.data.login.user
 						})
