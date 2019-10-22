@@ -40,7 +40,7 @@ const AppStack = createBottomTabNavigator({
 	},
 
 },{
-	initialRouteName: 'Profile',
+	initialRouteName: 'Home',
 	tabBarOptions: {
     activeTintColor: whiteFont,
     inactiveTintColor: greyFont,
