@@ -35,8 +35,6 @@ export const profileStyles = StyleSheet.create({
 
 	listItemContainer: {
 		backgroundColor: backgroundLavender,
-		// borderColor: 'red',
-		// borderWidth: 4,
 		marginVertical: 4
 	},
 

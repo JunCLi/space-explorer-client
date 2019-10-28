@@ -7,3 +7,15 @@ export const teal = 'teal'
 export const whiteFont = '#FFF'
 export const lightGreyFont = '#DDD'
 export const greyFont = '#AAA'
+
+export const font = {
+	white: whiteFont,
+	lightGrey: lightGreyFont,
+	grey: greyFont,
+}
+
+export const background = {
+	purple: backgroundPurple,
+	darkerPurple: darkerBackgroundPurple,
+	lavender: backgroundLavender,
+}
