@@ -5,12 +5,13 @@ import { Icon } from 'react-native-elements'
 
 import { backgroundPurple, whiteFont, lightGreyFont, greyFont } from '../stylesheets/colours'
 
-import Home from '../components/home/Home'
+import HomeStack from './AppStacks/HomeStack'
+import BookedTripsStack from './AppStacks/BookedTripsStack'
 import Profile from '../components/profile/Profile'
 
 const AppStack = createBottomTabNavigator({
 	Home: {
-		screen: Home,
+		screen: HomeStack,
 		navigationOptions: () => ({
 			title: 'Home',
 			tabBarIcon: ({ tintColor }) => (
@@ -20,7 +21,7 @@ const AppStack = createBottomTabNavigator({
 	},
 
 	BookedTrips: {
-		screen: Home,
+		screen: BookedTripsStack,
 		navigationOptions: () => ({
 			title: 'Booked Trips',
 			tabBarIcon: ({ tintColor }) => (
@@ -38,7 +39,6 @@ const AppStack = createBottomTabNavigator({
       ),
 		}),
 	},
-
 },{
 	initialRouteName: 'Home',
 	tabBarOptions: {
