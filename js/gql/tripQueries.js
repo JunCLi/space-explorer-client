@@ -27,22 +27,53 @@ export const BOOK_TRIP = gql`
 	}
 `
 
+// export const GET_BOOKED_TRIPS = gql`
+// 	query getBookedTrips($input: BookedTripPaginationObject) {
+// 		getBookedTrips(input: $input) {
+// 			pageInfo {
+// 				currentPage
+// 				totalPages
+// 			}
+// 			bookedTrips {
+// 				bookingDetails {
+// 					status
+// 					date_added
+// 				}
+// 				flightDetails {
+// 					flight_number
+// 					rocket_id
+// 					rocket_name
+// 					rocket_type
+// 					details
+// 					mission_name
+// 					mission_patch
+// 					mission_patch_small
+//       	}
+//     	}
+// 		}
+// 	}
+// `
+
 export const GET_BOOKED_TRIPS = gql`
-	query getBookedTrips($input: BookedTripPaginationObject) {
-		getBookedTrips(input: $input) {
-			bookingDetails {
-				status
-				date_added
-			}
-			flightDetails {
-				flight_number
-				rocket_id
-				rocket_name
-				rocket_type
-				details
-				mission_name
-				mission_patch
-				mission_patch_small
+	query getCursorBookedTrips($input: CursorPaginationObject) {
+		getCursorBookedTrips(input: $input) {
+			nextCursor
+			hasMore
+			bookedTrips {
+				bookingDetails {
+					status
+					date_added
+				}
+				flightDetails {
+					flight_number
+					rocket_id
+					rocket_name
+					rocket_type
+					details
+					mission_name
+					mission_patch
+					mission_patch_small
+				}  
 			}
 		}
 	}

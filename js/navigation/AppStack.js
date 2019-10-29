@@ -40,7 +40,7 @@ const AppStack = createBottomTabNavigator({
 		}),
 	},
 },{
-	initialRouteName: 'Home',
+	initialRouteName: 'BookedTrips',
 	tabBarOptions: {
     activeTintColor: whiteFont,
     inactiveTintColor: greyFont,

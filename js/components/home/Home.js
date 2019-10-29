@@ -1,14 +1,12 @@
 import React from 'react'
 
-import { SafeAreaView, StatusBar, Text, View, ScrollView } from 'react-native'
-import { Button } from 'react-native-elements'
+import { SafeAreaView, StatusBar, ScrollView } from 'react-native'
 
 import { connect } from 'react-redux'
 
 import AllLaunches from './AllLaunches'
 
 import { backgroundStyles } from '../../stylesheets/generalStyles'
-import { homeStyles } from '../../stylesheets/home/homeStyles'
 
 const mapStateToProps = state => {
 	return state

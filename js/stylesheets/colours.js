@@ -19,3 +19,9 @@ export const background = {
 	darkerPurple: darkerBackgroundPurple,
 	lavender: backgroundLavender,
 }
+
+export const backgroundColours = {
+	purple: backgroundPurple,
+	darkerPurple: darkerBackgroundPurple,
+	lavender: backgroundLavender,
+}
