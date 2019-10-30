@@ -3,8 +3,6 @@ import { StyleSheet } from 'react-native'
 import { baseSideMargins } from './screenSizeSettings'
 import { backgroundPurple } from './colours'
 
-// const backgroundPurple = 'rgb(7, 51, 73)'
-
 export const backgroundStyles = StyleSheet.create({
 	avoidKeyboard: {
 		flex: 1,
@@ -19,5 +17,11 @@ export const backgroundStyles = StyleSheet.create({
 		flex: 1,
 		paddingHorizontal: baseSideMargins,
 		paddingBottom: 8,
+	},
+	
+	mainContainer: {
+		flex: 1,
+		paddingHorizontal: baseSideMargins,
+		paddingBottom: 8,	
 	}
 })

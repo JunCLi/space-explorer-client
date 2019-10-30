@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs'
 
 import { Icon } from 'react-native-elements'
 
-import { backgroundPurple, whiteFont, lightGreyFont, greyFont } from '../stylesheets/colours'
+import { backgroundColours, fontColours } from '../stylesheets/colours'
 
 import HomeStack from './AppStacks/HomeStack'
 // import BookedTripsStack from './AppStacks/BookedTripsStack'
@@ -42,10 +42,10 @@ const AppStack = createBottomTabNavigator({
 },{
 	initialRouteName: 'Home',
 	tabBarOptions: {
-    activeTintColor: whiteFont,
-    inactiveTintColor: greyFont,
+    activeTintColor: fontColours.white,
+    inactiveTintColor: fontColours.grey,
 		style: {
-			backgroundColor: backgroundPurple,
+			backgroundColor: backgroundColours.purple,
 			borderTopWidth: 0,
 		},
 		labelStyle: {

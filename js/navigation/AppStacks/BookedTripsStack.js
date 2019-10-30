@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation-stack'
 
-import { background, font } from '../../stylesheets/colours'
+import { backgroundColours, fontColours } from '../../stylesheets/colours'
 
 import BookedTrips from '../../components/bookedTrips/BookedTrips'
 
@@ -20,10 +20,10 @@ const BookedTripsStack = createStackNavigator(
 	{
 		defaultNavigationOptions: {
 			headerStyle: {
-				color: font.white,
-				backgroundColor: background.darkerPurple,
+				color: fontColours.white,
+				backgroundColor: backgroundColours.darkerPurple,
 			},
-			headerTintColor: font.white,
+			headerTintColor: fontColours.white,
 			headerTitleStyle: {
 				fontSize: 25,
 				fontWeight: 'bold',

@@ -8,6 +8,7 @@ import { useMutation } from 'react-apollo-hooks'
 import { SIGNUP } from '../../../gql/authQueries'
 
 import { signupFormStyles } from '../../../stylesheets/authentication/formStyles'
+import { styles } from './styles'
 
 const SignupForm = props => {
 	const signup = useMutation(SIGNUP)
@@ -58,8 +59,8 @@ const SignupForm = props => {
 				} = formikProps
 
 				return (
-					<View style={signupFormStyles.mainContainer}>
-						<View style={signupFormStyles.inputViewContainer}>
+					<View style={styles.mainContainer}>
+						<View style={styles.inputViewContainer}>
 							<Input
 								value={values.email}
 								keyboardType='email-address'
@@ -68,19 +69,19 @@ const SignupForm = props => {
 								placeholderTextColor='white'
 								editable={true}
 								autoCompleteType='email'
-								inputStyle={signupFormStyles.inputWithIcon}
-								containerStyle={signupFormStyles.inputContainer}
+								inputStyle={styles.inputWithIcon}
+								containerStyle={styles.inputContainer}
 								leftIcon={
 									<Icon
 										type='material'
 										name='mail-outline'
-										iconStyle={signupFormStyles.icon}
+										iconStyle={styles.icon}
 									/>
 								}
-								leftIconContainerStyle={signupFormStyles.leftIconContainer}
+								leftIconContainerStyle={styles.leftIconContainer}
 							/>
 						</View>
-						<View style={signupFormStyles.inputViewContainer}>
+						<View style={styles.inputViewContainer}>
 							<Input
 								value={values.password}
 								onChangeText={handleChange('password')}
@@ -89,19 +90,19 @@ const SignupForm = props => {
 								editable={true}
 								autoCompleteType='password'
 								secureTextEntry={true}
-								inputStyle={signupFormStyles.inputWithIcon}
-								containerStyle={signupFormStyles.inputContainer}
+								inputStyle={styles.inputWithIcon}
+								containerStyle={styles.inputContainer}
 								leftIcon={
 									<Icon
 										type='material'
 										name='lock-outline'
-										iconStyle={signupFormStyles.icon}
+										iconStyle={styles.icon}
 									/>
 								}
-								leftIconContainerStyle={signupFormStyles.leftIconContainer}
+								leftIconContainerStyle={styles.leftIconContainer}
 							/>
 						</View>
-						<View style={signupFormStyles.inputViewContainer}>
+						<View style={styles.inputViewContainer}>
 							<Input
 								value={values.confirmPassword}
 								onChangeText={handleChange('confirmPassword')}
@@ -110,27 +111,27 @@ const SignupForm = props => {
 								editable={true}
 								autoCompleteType='password'
 								secureTextEntry={true}
-								inputStyle={signupFormStyles.inputWithIcon}
-								containerStyle={signupFormStyles.inputContainer}
+								inputStyle={styles.inputWithIcon}
+								containerStyle={styles.inputContainer}
 								leftIcon={
 									<Icon
 										type='material'
 										name='lock'
-										iconStyle={signupFormStyles.icon}
+										iconStyle={styles.icon}
 									/>
 								}
-								leftIconContainerStyle={signupFormStyles.leftIconContainer}
+								leftIconContainerStyle={styles.leftIconContainer}
 							/>
 						</View>
-						<View style={signupFormStyles.inputViewDoubleContainer}>
+						<View style={styles.inputViewDoubleContainer}>
 							<Input
 								value={values.firstName}
 								onChangeText={handleChange('firstName')}
 								placeholder='First Name'
 								placeholderTextColor='white'
 								editable={true}
-								inputStyle={signupFormStyles.doubleInput}
-								containerStyle={signupFormStyles.doubleInputContainer}
+								inputStyle={styles.doubleInput}
+								containerStyle={styles.doubleInputContainer}
 							/>
 							<Input
 								value={values.lastName}
@@ -138,19 +139,19 @@ const SignupForm = props => {
 								placeholder='Last Name'
 								placeholderTextColor='white'
 								editable={true}
-								inputStyle={signupFormStyles.doubleInput}
-								containerStyle={signupFormStyles.doubleInputContainer}
+								inputStyle={styles.doubleInput}
+								containerStyle={styles.doubleInputContainer}
 							/>
 						</View>
 
 						<View>
 							<Button
 								title='Signup'
-								buttonStyle={signupFormStyles.button}
+								buttonStyle={styles.button}
 								onPress={handleSubmit}
 								disabled={!dirty || isSubmitting}
-								disabledStyle={signupFormStyles.disabledButton}
-								disabledTitleStyle={signupFormStyles.disabledButtonTitle}
+								disabledStyle={styles.disabledButton}
+								disabledTitleStyle={styles.disabledButtonTitle}
 							/>
 						</View>
 					</View>

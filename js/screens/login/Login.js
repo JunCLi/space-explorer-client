@@ -1,12 +1,10 @@
 import React from 'react'
 
-import { Platform, KeyboardAvoidingView, Image, SafeAreaView, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native'
+import { Platform, KeyboardAvoidingView, SafeAreaView, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native'
 
-import LoginForm from '../../components/authentication/login/LoginForm'
+import LoginForm from '../../components/forms/loginForm/LoginForm'
 import LogoWithText from '../../components/util/Logo/LogoWithText'
-
-import { backgroundStyles } from '../../stylesheets/generalStyles'
-import { sharedStyles, loginStyles } from '../../stylesheets/authentication/signupLoginStyles'
+import { styles } from './styles'
 
 const Login = props => {
 	const handleGoSignup = () => {
@@ -16,21 +14,20 @@ const Login = props => {
 	return (
 		<KeyboardAvoidingView
 			behavior={Platform.OS === "ios" ? "padding" : null}
-			style={backgroundStyles.avoidKeyboard}
+			style={styles.avoidKeyboard}
 		>
-			<SafeAreaView style={backgroundStyles.background}>
+			<SafeAreaView style={styles.background}>
 				<StatusBar barStyle='light-content' />
 
-				<ScrollView style={backgroundStyles.container} contentContainerStyle={{flexGrow: 1}}>
-					{/* <View style={loginStyles.imageContainer}> */}
-						<LogoWithText size={100} containerStyle={loginStyles.imageContainer} />
-					{/* </View> */}
+				<ScrollView style={styles.mainContainer} contentContainerStyle={{flexGrow: 1}}>
+
+					<LogoWithText size={100} containerStyle={styles.imageContainer} />
 
 					<LoginForm {...props} /> 
 
-					<View style={loginStyles.bottomTextContainer}>
+					<View style={styles.bottomTextContainer}>
 						<TouchableOpacity onPress={handleGoSignup}>
-							<Text style={loginStyles.swapFormText}>Don't have an account? Create one</Text>
+							<Text style={styles.swapFormText}>Don't have an account? Create one</Text>
 						</TouchableOpacity>
 					</View>
 				</ScrollView>

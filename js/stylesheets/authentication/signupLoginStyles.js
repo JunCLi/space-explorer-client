@@ -33,38 +33,3 @@ export const sharedStyles = StyleSheet.create({
 		textAlign: 'center',
 	}
 })
-
-export const loginStyles = StyleSheet.create({
-	...sharedStyles,
-
-	imageContainer: {
-		marginTop: screenHeight / 8,
-	},
-})
-
-export const signupStyles = StyleSheet.create({
-	...sharedStyles,
-})
-
-export const successfulSignupStyles = StyleSheet.create({
-	...sharedStyles,
-	
-	mainContainer: {
-		marginHorizontal: screenWidth / 10,
-	},
-
-	messageContainer: {
-		marginVertical: screenHeight / 12,
-	},
-
-	text: {
-		marginVertical: baseFont,
-		color: whiteFont,
-		fontSize: baseFont * 1.5,
-		textAlign: 'center',
-	},
-
-	button: {
-		backgroundColor: 'teal'
-	}
-})

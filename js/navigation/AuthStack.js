@@ -1,9 +1,8 @@
 import { createStackNavigator } from 'react-navigation-stack'
 
-
 import Login from '../screens/login/Login'
 import Signup from '../screens/signup/Signup'
-import SuccessfulSignup from '../screens/signup/SuccessfulSignup'
+import SuccessfulSignup from '../screens/successfulSignup/SuccessfulSignup'
 
 const AuthStack = createStackNavigator({
 	Login: {

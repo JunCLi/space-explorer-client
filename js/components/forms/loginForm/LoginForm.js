@@ -6,8 +6,7 @@ import { Formik } from 'formik'
 
 import { useMutation } from 'react-apollo-hooks'
 import { LOGIN } from '../../../gql/authQueries'
-
-import { loginFormStyles } from '../../../stylesheets/authentication/formStyles'
+import { styles } from './styles'
 
 const LoginForm = props => {
 	const login = useMutation(LOGIN)
@@ -55,8 +54,8 @@ const LoginForm = props => {
 				} = formikProps
 
 				return (
-					<View style={loginFormStyles.mainContainer}>
-						<View style={loginFormStyles.inputViewContainer}>
+					<View style={styles.mainContainer}>
+						<View style={styles.inputViewContainer}>
 							<Input
 								value={values.email}
 								keyboardType='email-address'
@@ -65,19 +64,19 @@ const LoginForm = props => {
 								placeholderTextColor='white'
 								editable={true}
 								autoCompleteType='email'
-								inputStyle={loginFormStyles.inputWithIcon}
-								containerStyle={loginFormStyles.inputContainer}
+								inputStyle={styles.inputWithIcon}
+								containerStyle={styles.inputContainer}
 								leftIcon={
 									<Icon
 										type='material'
 										name='mail-outline'
-										iconStyle={loginFormStyles.icon}
+										iconStyle={styles.icon}
 									/>
 								}
 								leftIconContainerStyle={{marginLeft: 0}}
 							/>
 						</View>
-						<View style={loginFormStyles.inputViewContainer}>
+						<View style={styles.inputViewContainer}>
 							<Input
 								value={values.password}
 								onChangeText={handleChange('password')}
@@ -86,13 +85,13 @@ const LoginForm = props => {
 								editable={true}
 								autoCompleteType='password'
 								secureTextEntry={true}
-								inputStyle={loginFormStyles.inputWithIcon}
-								containerStyle={loginFormStyles.inputContainer}
+								inputStyle={styles.inputWithIcon}
+								containerStyle={styles.inputContainer}
 								leftIcon={
 									<Icon
 										type='material'
 										name='lock-outline'
-										iconStyle={loginFormStyles.icon}
+										iconStyle={styles.icon}
 									/>
 								}
 								leftIconContainerStyle={{marginLeft: 0}}
@@ -102,16 +101,16 @@ const LoginForm = props => {
 						<View>
 							<Button
 								title='Login'
-								buttonStyle={loginFormStyles.button}
+								buttonStyle={styles.button}
 								onPress={handleSubmit}
 								disabled={!dirty || isSubmitting}
-								disabledStyle={loginFormStyles.disabledButton}
-								disabledTitleStyle={loginFormStyles.disabledButtonTitle}
+								disabledStyle={styles.disabledButton}
+								disabledTitleStyle={styles.disabledButtonTitle}
 							/>
 						</View>
 
 						<TouchableOpacity>
-							<Text style={loginFormStyles.forgotPassword}>Forgot your password?</Text>
+							<Text style={styles.forgotPassword}>Forgot your password?</Text>
 						</TouchableOpacity>
 					</View>
 				)

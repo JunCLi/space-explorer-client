@@ -18,4 +18,5 @@ export const backgroundColours = {
 	purple: backgroundPurple,
 	darkerPurple: darkerBackgroundPurple,
 	lavender: backgroundLavender,
+	teal: teal,
 }
