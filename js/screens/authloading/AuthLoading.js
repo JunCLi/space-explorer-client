@@ -9,7 +9,7 @@ import { storeAuthentication } from '../../redux/actions/authenticationActions'
 
 import { backgroundStyles } from '../../stylesheets/generalStyles'
 
-import LogoWithText from '../util/Logo/LogoWithText'
+import LogoWithText from '../../components/util/Logo/LogoWithText'
 
 const mapStateToProps = state => {
 	return {
@@ -49,12 +49,6 @@ const AuthLoading = props => {
 		<SafeAreaView style={backgroundStyles.background}>
 			<StatusBar barStyle='light-content' />
 			<LogoWithText containerStyle={{marginTop: 300}} />
-
-			{/* <Text onPress={() => props.storeAuthentication(data.getLoggedUser)}>press</Text>
-			<Text onPress={() => console.log('show props', props)}>show props</Text>
-
-			<Text onPress={handleGoAuthentication}>go auth</Text>
-			<Text onPress={handleGoApp}>go App</Text> */}
 		</SafeAreaView>
 	)
 }

@@ -8,16 +8,10 @@ export const whiteFont = '#FFF'
 export const lightGreyFont = '#DDD'
 export const greyFont = '#AAA'
 
-export const font = {
+export const fontColours = {
 	white: whiteFont,
 	lightGrey: lightGreyFont,
 	grey: greyFont,
-}
-
-export const background = {
-	purple: backgroundPurple,
-	darkerPurple: darkerBackgroundPurple,
-	lavender: backgroundLavender,
 }
 
 export const backgroundColours = {

@@ -6,7 +6,7 @@ import { Icon } from 'react-native-elements'
 import { backgroundPurple, whiteFont, lightGreyFont, greyFont } from '../stylesheets/colours'
 
 import HomeStack from './AppStacks/HomeStack'
-import BookedTripsStack from './AppStacks/BookedTripsStack'
+// import BookedTripsStack from './AppStacks/BookedTripsStack'
 import Profile from '../components/profile/Profile'
 
 const AppStack = createBottomTabNavigator({
@@ -21,7 +21,7 @@ const AppStack = createBottomTabNavigator({
 	},
 
 	BookedTrips: {
-		screen: BookedTripsStack,
+		screen: HomeStack,
 		navigationOptions: () => ({
 			title: 'Booked Trips',
 			tabBarIcon: ({ tintColor }) => (
@@ -40,7 +40,7 @@ const AppStack = createBottomTabNavigator({
 		}),
 	},
 },{
-	initialRouteName: 'BookedTrips',
+	initialRouteName: 'Home',
 	tabBarOptions: {
     activeTintColor: whiteFont,
     inactiveTintColor: greyFont,

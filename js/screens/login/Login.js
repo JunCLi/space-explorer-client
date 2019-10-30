@@ -2,11 +2,11 @@ import React from 'react'
 
 import { Platform, KeyboardAvoidingView, Image, SafeAreaView, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native'
 
-import LoginForm from './LoginForm'
-import LogoWithText from '../../util/Logo/LogoWithText'
+import LoginForm from '../../components/authentication/login/LoginForm'
+import LogoWithText from '../../components/util/Logo/LogoWithText'
 
-import { backgroundStyles } from '../../../stylesheets/generalStyles'
-import { sharedStyles, loginStyles } from '../../../stylesheets/authentication/signupLoginStyles'
+import { backgroundStyles } from '../../stylesheets/generalStyles'
+import { sharedStyles, loginStyles } from '../../stylesheets/authentication/signupLoginStyles'
 
 const Login = props => {
 	const handleGoSignup = () => {

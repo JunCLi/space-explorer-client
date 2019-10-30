@@ -4,11 +4,11 @@ import { Text, View } from 'react-native'
 import { Avatar, ListItem } from 'react-native-elements'
 
 import { useQuery } from 'react-apollo-hooks'
-import { GET_ALL_LAUNCHES } from '../../gql/tripQueries'
+import { GET_ALL_LAUNCHES } from '../../../gql/tripQueries'
 
-import DarkPurpleButton from '../util/Buttons/DarkPurpleButton'
+import DarkPurpleButton from '../../util/Buttons/DarkPurpleButton'
 
-import { homeStyles } from '../../stylesheets/home/homeStyles'
+import { styles } from './styles'
 
 const AllLaunches = props => {
 	const { loading, error, data, fetchMore } = useQuery(GET_ALL_LAUNCHES)
@@ -59,16 +59,16 @@ const AllLaunches = props => {
 								<Avatar
 									source={{uri: launch.mission_patch}}
 									title={launch.mission_name.substring(0, 3)}
-									overlayContainerStyle={homeStyles.avatarBackground}
+									overlayContainerStyle={styles.avatarBackground}
 									rounded={false}
 									size='large'
 								/>
 							}
 							title={launch.mission_name}
-							titleStyle={homeStyles.missionPreviewTitle}
+							titleStyle={styles.missionPreviewTitle}
 							subtitle={detailsPreview}
-							subtitleStyle={homeStyles.missionPreviewSubtitle}
-							containerStyle={homeStyles.missionPreviewContainer}
+							subtitleStyle={styles.missionPreviewSubtitle}
+							containerStyle={styles.missionPreviewContainer}
 							onPress={() => viewMission(launch)}
 						/>
 					)}

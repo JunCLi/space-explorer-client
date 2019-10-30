@@ -1,10 +1,9 @@
 import React from 'react'
-
 import { SafeAreaView, StatusBar, ScrollView } from 'react-native'
 
 import { connect } from 'react-redux'
 
-import AllLaunches from './AllLaunches'
+import AllLaunches from '../../components/lists/allLaunches/AllLaunches'
 
 import { backgroundStyles } from '../../stylesheets/generalStyles'
 
