@@ -7,10 +7,9 @@ import { connect } from 'react-redux'
 import { useMutation } from 'react-apollo-hooks'
 import { BOOK_TRIP } from '../../../gql/tripQueries'
 
-import DarkPurpleButton from '../../Buttons/DarkPurpleButton'
+import DarkPurpleButton from '../../../components/Buttons/DarkPurpleButton'
 
-import { backgroundStyles } from '../../../stylesheets/generalStyles'
-import { launchStyles } from './launchStyles'
+import { styles } from './styles'
 
 const mapStateToProps = state => {
 	return state
@@ -67,36 +66,36 @@ const Launch = props => {
 	}
 
 	return (
-		<SafeAreaView style={backgroundStyles.background}>
+		<SafeAreaView style={styles.background}>
 			<StatusBar barStyle='light-content' />
-			<ScrollView style={backgroundStyles.container} contentContainerStyle={{flexGrow: 1}}>
-				<View style={launchStyles.infoContainer}>
-					<View style={launchStyles.avatarContainer}>
+			<ScrollView style={styles.mainContainer} contentContainerStyle={{flexGrow: 1}}>
+				<View style={styles.infoContainer}>
+					<View style={styles.avatarContainer}>
 						<Avatar
-							overlayContainerStyle={launchStyles.avatarOverlayContainer}
+							overlayContainerStyle={styles.avatarOverlayContainer}
 							source={{ uri: launch.mission_patch }}
 							size={200}
 						/>
-						<Text style={launchStyles.missionName}>{launch.mission_name}</Text>
+						<Text style={styles.missionName}>{launch.mission_name}</Text>
 					</View>
 
-					<View style={launchStyles.container}>
-						<Text style={launchStyles.rocketInfo}>
-							<Text style={launchStyles.missionInfoLabel}>Rocket Name: </Text>
+					<View style={styles.container}>
+						<Text style={styles.rocketInfo}>
+							<Text style={styles.missionInfoLabel}>Rocket Name: </Text>
 							{launch.rocket_name}
 						</Text>
 
-						<Text style={launchStyles.rocketInfo}>
-							<Text style={launchStyles.missionInfoLabel}>Rocket Type: </Text>
+						<Text style={styles.rocketInfo}>
+							<Text style={styles.missionInfoLabel}>Rocket Type: </Text>
 							{launch.rocket_type}
 						</Text>
-						<Text style={launchStyles.launchDetails}>{launch.details}</Text>
+						<Text style={styles.launchDetails}>{launch.details}</Text>
 					</View>
 				</View>
 
-				<View style={launchStyles.container}>
+				<View style={styles.container}>
 					<DarkPurpleButton
-						text='book flight'
+						text='Book Flight'
 						buttonFunction={handleBookTrip}
 						disabled={disableButton}
 					/>

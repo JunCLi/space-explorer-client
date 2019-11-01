@@ -2,7 +2,7 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import { backgroundColours, fontColours } from '../../stylesheets/colours'
 
-import BookedTrips from '../../components/bookedTrips/BookedTrips'
+import BookedTrips from '../../screens/app/bookedTrips/BookedTrips'
 
 const BookedTripsStack = createStackNavigator(
 	{

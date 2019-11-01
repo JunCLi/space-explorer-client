@@ -15,6 +15,9 @@ export const fontColours = {
 }
 
 export const backgroundColours = {
+	main: backgroundPurple,
+
+
 	purple: backgroundPurple,
 	darkerPurple: darkerBackgroundPurple,
 	lavender: backgroundLavender,

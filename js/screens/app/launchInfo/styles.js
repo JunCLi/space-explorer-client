@@ -1,17 +1,19 @@
 import { StyleSheet } from 'react-native'
 
 import { baseFont, screenHeight, screenWidth } from '../../../stylesheets/screenSizeSettings'
-import { font, teal, darkerBackgroundPurple, backgroundLavender } from '../../../stylesheets/colours'
+import { fontColours } from '../../../stylesheets/colours'
+
+import { backgroundStyles } from '../../../stylesheets/generalStyles'
 
 export const missionInfo = {
 	rocketInfo: {
-		color: font.white,
+		color: fontColours.white,
 		fontSize: baseFont * 1.5,
 		marginBottom: 8,
 	},
 
 	rocketName: {
-		color: font.white,
+		color: fontColours.white,
 		fontSize: baseFont * 1.5,
 	},
 
@@ -20,15 +22,16 @@ export const missionInfo = {
 	},
 
 	rocketType: {
-		color: font.white,
+		color: fontColours.white,
 	},
 
 	launchDetails: {
-		color: font.white,
+		color: fontColours.white,
 	},
 }
 
-export const launchStyles = StyleSheet.create({
+export const styles = StyleSheet.create({
+	...backgroundStyles,
 	...missionInfo,
 
 	container: {
@@ -53,7 +56,7 @@ export const launchStyles = StyleSheet.create({
 	missionName: {
 		textAlign: 'center',
 		fontSize: baseFont * 3,
-		color: font.white,
+		color: fontColours.white,
 		marginVertical: baseFont * 0.5,
 	},
 })

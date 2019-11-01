@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 
 import { Text, View } from 'react-native'
-import { Avatar, Button, ListItem } from 'react-native-elements'
+import { Avatar, ListItem } from 'react-native-elements'
 
 import { useQuery } from 'react-apollo-hooks'
-import { GET_BOOKED_TRIPS } from '../../gql/tripQueries'
+import { GET_BOOKED_TRIPS } from '../../../gql/tripQueries'
 
-import DarkPurpleButton from '../Buttons/DarkPurpleButton'
+import DarkPurpleButton from '../../Buttons/DarkPurpleButton'
 
-import { BookedTripStyles } from './BookedTripsStyles'
-import { homeStyles } from '../../stylesheets/home/homeStyles'
+import { styles } from './styles'
 
 const AllBookedTrips = props => {
 	const { data, error, loading, fetchMore } = useQuery(GET_BOOKED_TRIPS, {
@@ -46,7 +45,7 @@ const AllBookedTrips = props => {
 
 	return (
 		<>
-			<View style={BookedTripStyles.topContainer}>
+			<View style={styles.topContainer}>
 				{data.getCursorBookedTrips.bookedTrips.map(trip => (
 					<ListItem
 						key={trip.flightDetails.flight_number}
@@ -54,16 +53,16 @@ const AllBookedTrips = props => {
 							<Avatar
 								source={{uri: trip.flightDetails.mission_patch}}
 								title={trip.flightDetails.mission_name.substring(0, 3)}
-								overlayContainerStyle={homeStyles.avatarBackground}
+								overlayContainerStyle={styles.avatarBackground}
 								rounded={false}
 								size='large'
 							/>
 						}
 						title={trip.flightDetails.mission_name}
-						titleStyle={homeStyles.missionPreviewTitle}
+						titleStyle={styles.missionPreviewTitle}
 						subtitle={`Trip Status: ${trip.bookingDetails.status}`}
-						subtitleStyle={homeStyles.missionPreviewSubtitle}
-						containerStyle={homeStyles.missionPreviewContainer}
+						subtitleStyle={styles.missionPreviewSubtitle}
+						containerStyle={styles.missionPreviewContainer}
 					/>
 				))}
 

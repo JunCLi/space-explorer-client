@@ -38,12 +38,12 @@ const AllLaunches = props => {
 	}
 
 	const viewMission = launch => {
-		props.navigation.navigate('Launch', {launch: launch})
+		props.navigation.navigate('LaunchInfo', {launch: launch})
 	}
 
 	return (
 		<>
-			<View style={{flex: 1}}>
+			<View style={styles.topContainer}>
 				{data.getAllLaunches.launches.map(launch => {
 					const detailsPreviewCharacterCount = 100
 
@@ -54,7 +54,6 @@ const AllLaunches = props => {
 					return (
 						<ListItem
 							key={launch.flight_number}
-							// leftAvatar={{size: 'large', source: {uri: launch.mission_patch}}}
 							leftAvatar={
 								<Avatar
 									source={{uri: launch.mission_patch}}

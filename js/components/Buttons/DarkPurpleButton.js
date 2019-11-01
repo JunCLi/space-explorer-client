@@ -3,7 +3,7 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Button } from 'react-native-elements'
 
-import { baseFont, screenHeight, screenWidth } from '../../stylesheets/screenSizeSettings'
+import { baseFont } from '../../stylesheets/screenSizeSettings'
 import { fontColours, backgroundColours } from '../../stylesheets/colours'
 
 const DarkPurpleButton = props => {

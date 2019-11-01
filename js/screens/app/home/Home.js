@@ -1,27 +1,25 @@
 import React from 'react'
-
-import { SafeAreaView, StatusBar, Text, View, ScrollView } from 'react-native'
+import { SafeAreaView, StatusBar, ScrollView } from 'react-native'
 
 import { connect } from 'react-redux'
 
-import AllBookedTrips from './AllBookedTrips'
+import AllLaunches from '../../../components/lists/allLaunches/AllLaunches'
 
-import { backgroundStyles } from '../../stylesheets/generalStyles'
+import { backgroundStyles } from '../../../stylesheets/generalStyles'
 
 const mapStateToProps = state => {
 	return state
 }
 
-const BookedTrips = props => {
-
+const Home = props => {
 	return (
 		<SafeAreaView style={backgroundStyles.background}>
 			<StatusBar barStyle='light-content' />
 			<ScrollView style={backgroundStyles.container} contentContainerStyle={{flexGrow: 1}}>
-				<AllBookedTrips {...props} />
+				<AllLaunches {...props} />
 			</ScrollView>
 		</SafeAreaView>
 	)
 }
 
-export default connect(mapStateToProps)(BookedTrips)	
+export default connect(mapStateToProps)(Home)

@@ -2,8 +2,8 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import { backgroundColours, fontColours } from '../../stylesheets/colours'
 
-import Home from '../../screens/home/Home'
-// import Launch from '../../components/home/launch/Launch'
+import Home from '../../screens/app/home/Home'
+import LaunchInfo from '../../screens/app/launchInfo/Launch'
 
 const HomeStack = createStackNavigator(
 	{
@@ -14,12 +14,12 @@ const HomeStack = createStackNavigator(
 			})
 		},
 
-		// Launch: {
-		// 	screen: Launch,
-		// 	navigationOptions: ({ navigation }) => ({
-		// 		title: navigation.state.params.launch.mission_name
-		// 	})
-		// }
+		LaunchInfo: {
+			screen: LaunchInfo,
+			navigationOptions: ({ navigation }) => ({
+				title: navigation.state.params.launch.mission_name
+			})
+		}
 	},
 	{
 		defaultNavigationOptions: {
