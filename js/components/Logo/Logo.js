@@ -2,7 +2,7 @@ import React from 'react'
 
 import { StyleSheet, Text, View } from 'react-native'
 
-import { backgroundPurple } from '../../../stylesheets/colours'
+import { backgroundColours } from '../../stylesheets/colours'
 
 const Logo = props => {
 	const { size = 100 } = props
@@ -46,7 +46,7 @@ const Logo = props => {
 			width: size / 3,
 			height: size / 2,
 			borderRadius: 1000,
-			backgroundColor: backgroundPurple,
+			backgroundColor: backgroundColours.purple,
 			// backgroundColor: 'red',
 		},
 
@@ -58,7 +58,7 @@ const Logo = props => {
 			width: size / 2,
 			height: size / 2,
 			borderRadius: 1000,
-			backgroundColor: backgroundPurple,
+			backgroundColor: backgroundColours.purple,
 			// backgroundColor: 'green',
 		},
 	})

@@ -6,7 +6,7 @@ import { Avatar, ListItem } from 'react-native-elements'
 import { useQuery } from 'react-apollo-hooks'
 import { GET_ALL_LAUNCHES } from '../../../gql/tripQueries'
 
-import DarkPurpleButton from '../../util/Buttons/DarkPurpleButton'
+import DarkPurpleButton from '../../Buttons/DarkPurpleButton'
 
 import { styles } from './styles'
 

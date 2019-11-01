@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { useMutation } from 'react-apollo-hooks'
 import { BOOK_TRIP } from '../../../gql/tripQueries'
 
-import DarkPurpleButton from '../../util/Buttons/DarkPurpleButton'
+import DarkPurpleButton from '../../Buttons/DarkPurpleButton'
 
 import { backgroundStyles } from '../../../stylesheets/generalStyles'
 import { launchStyles } from './launchStyles'

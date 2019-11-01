@@ -3,7 +3,7 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Logo from './Logo'
 
-import { whiteFont } from '../../../stylesheets/colours'
+import { fontColours } from '../../stylesheets/colours'
 
 const LogoWithText = props => {
 	const { size = 100, textSize = size / 4, containerStyle } = props
@@ -13,7 +13,7 @@ const LogoWithText = props => {
 
 		text: {
 			marginTop: textSize / 3,
-			color: whiteFont,
+			color: fontColours.white,
 			fontSize: textSize,
 			textAlign: 'center',
 		}

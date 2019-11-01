@@ -6,8 +6,6 @@ import { Formik } from 'formik'
 
 import { useMutation } from 'react-apollo-hooks'
 import { SIGNUP } from '../../../gql/authQueries'
-
-import { signupFormStyles } from '../../../stylesheets/authentication/formStyles'
 import { styles } from './styles'
 
 const SignupForm = props => {

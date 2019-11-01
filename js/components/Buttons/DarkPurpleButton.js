@@ -3,8 +3,8 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Button } from 'react-native-elements'
 
-import { baseFont, screenHeight, screenWidth } from '../../../stylesheets/screenSizeSettings'
-import { whiteFont, lightGreyFont, teal, darkerBackgroundPurple, backgroundLavender } from '../../../stylesheets/colours'
+import { baseFont, screenHeight, screenWidth } from '../../stylesheets/screenSizeSettings'
+import { fontColours, backgroundColours } from '../../stylesheets/colours'
 
 const DarkPurpleButton = props => {
 	const { text = 'button text here', buttonFunction, disabled = false } = props
@@ -15,19 +15,19 @@ const DarkPurpleButton = props => {
 		},
 
 		button: {
-			backgroundColor: darkerBackgroundPurple,
+			backgroundColor: backgroundColours.darkerPurple,
 		},
 
 		text: {
-			color: whiteFont,
+			color: fontColours.white,
 		},
 
 		disabledButton: {
-			backgroundColor: backgroundLavender,
+			backgroundColor: backgroundColours.lavender,
 		},
 
 		disabledText: {
-			color: lightGreyFont,
+			color: fontColours.lightgrey,
 		},
 	})
 

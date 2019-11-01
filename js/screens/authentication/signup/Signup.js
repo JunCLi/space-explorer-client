@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Platform, KeyboardAvoidingView, SafeAreaView, ScrollView, Text, TouchableOpacity, View, StatusBar } from 'react-native'
 
-import SignupForm from '../../components/forms/signupForm/SignupForm'
-import LogoWithText from '../../components/util/Logo/LogoWithText'
+import SignupForm from '../../../components/forms/signupForm/SignupForm'
+import LogoWithText from '../../../components/Logo/LogoWithText'
 import { styles } from './styles'
 
 const Signup = props => {

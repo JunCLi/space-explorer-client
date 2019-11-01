@@ -3,7 +3,7 @@ import React from 'react'
 import { SafeAreaView, ScrollView, Text, View, StatusBar } from 'react-native'
 import { Button } from 'react-native-elements'
 
-import LogoWithText from '../../components/util/Logo/LogoWithText'
+import LogoWithText from '../../../components/Logo/LogoWithText'
 import { styles } from './styles'
 
 const SuccessfulSignup = props => {

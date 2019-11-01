@@ -6,7 +6,7 @@ import { Avatar, Button, ListItem } from 'react-native-elements'
 import { useQuery } from 'react-apollo-hooks'
 import { GET_BOOKED_TRIPS } from '../../gql/tripQueries'
 
-import DarkPurpleButton from '../util/Buttons/DarkPurpleButton'
+import DarkPurpleButton from '../Buttons/DarkPurpleButton'
 
 import { BookedTripStyles } from './BookedTripsStyles'
 import { homeStyles } from '../../stylesheets/home/homeStyles'

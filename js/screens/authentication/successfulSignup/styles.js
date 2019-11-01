@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native'
 
-import { baseFont, screenHeight, screenWidth } from '../../stylesheets/screenSizeSettings'
-import { fontColours, backgroundColours } from '../../stylesheets/colours'
+import { baseFont, screenHeight, screenWidth } from '../../../stylesheets/screenSizeSettings'
+import { fontColours, backgroundColours } from '../../../stylesheets/colours'
 
-import { backgroundStyles } from '../../stylesheets/generalStyles'
-import { sharedStyles } from '../../stylesheets/authentication/signupLoginStyles'
+import { backgroundStyles } from '../../../stylesheets/generalStyles'
+import { sharedStyles } from '../sharedStyles'
 
 export const styles = StyleSheet.create({
 	...backgroundStyles,

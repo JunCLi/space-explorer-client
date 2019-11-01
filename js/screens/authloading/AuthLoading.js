@@ -9,7 +9,7 @@ import { storeAuthentication } from '../../redux/actions/authenticationActions'
 
 import { backgroundStyles } from '../../stylesheets/generalStyles'
 
-import LogoWithText from '../../components/util/Logo/LogoWithText'
+import LogoWithText from '../../components/Logo/LogoWithText'
 
 const mapStateToProps = state => {
 	return {
