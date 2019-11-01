@@ -17,7 +17,7 @@ const BookedTrips = props => {
 	return (
 		<SafeAreaView style={styles.background}>
 			<StatusBar barStyle='light-content' />
-			<ScrollView style={styles.container} contentContainerStyle={{flexGrow: 1}}>
+			<ScrollView style={styles.mainContainer} contentContainerStyle={{flexGrow: 1}}>
 				<AllBookedTrips {...props} />
 			</ScrollView>
 		</SafeAreaView>

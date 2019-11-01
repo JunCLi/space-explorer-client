@@ -1,18 +1,22 @@
 import { StyleSheet } from 'react-native'
 
 import { baseFont, screenHeight } from '../../stylesheets/screenSizeSettings'
-import { whiteFont, lightGreyFont } from '../../stylesheets/colours'
+import { fontColours } from '../../stylesheets/colours'
+
+import { backgroundStyles } from '../../stylesheets/generalStyles'
 
 export const sharedStyles = StyleSheet.create({
+	...backgroundStyles,
+	
 	welcomeText: {
 		marginTop: baseFont / 2,
-		color: whiteFont,
+		color: fontColours.white,
 		fontSize: baseFont * 1.5,
 		textAlign: 'center',
 	},
 
 	text: {
-		color: whiteFont,
+		color: fontColours.white,
 		fontSize: baseFont,
 	},
 
@@ -28,7 +32,7 @@ export const sharedStyles = StyleSheet.create({
 	},
 
 	swapFormText: {
-		color: lightGreyFont,
+		color: fontColours.lightGrey,
 		fontSize: baseFont,
 		textAlign: 'center',
 	}

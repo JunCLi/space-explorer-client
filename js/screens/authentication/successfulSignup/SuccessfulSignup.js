@@ -17,16 +17,20 @@ const SuccessfulSignup = props => {
 
 			<ScrollView style={{...styles.mainContainer}} contentContainerStyle={{flexGrow: 1}}>
 
-				<LogoWithText size={100} containerStyle={styles.imageContainer} />
+				<View style={styles.topContainer}>
+					<LogoWithText size={100} containerStyle={styles.imageContainer} />
 
-				<View style={styles.messageContainer}>
-					<Text style={styles.text}>Your account has been created!</Text>
-					<Text style={styles.text}>Log in and get started on booking your space adventures!</Text>
+					<View style={styles.messageContainer}>
+						<Text style={styles.text}>Your account has been created!</Text>
+						<Text style={styles.text}>Log in and get started on booking your space adventures!</Text>
+					</View>
 				</View>
 
 				<Button
 					title='Go to Login'
+					containerStyle={styles.buttonContainer}
 					buttonStyle={styles.button}
+					titleStyle={styles.buttonText}
 					onPress={handleGoLogin}
 				/>
 
