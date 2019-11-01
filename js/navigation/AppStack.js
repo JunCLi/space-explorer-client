@@ -3,14 +3,15 @@ import { createBottomTabNavigator } from 'react-navigation-tabs'
 
 import { Icon } from 'react-native-elements'
 
-import { backgroundPurple, whiteFont, lightGreyFont, greyFont } from '../stylesheets/colours'
+import { backgroundColours, fontColours } from '../stylesheets/colours'
 
-import Home from '../components/home/Home'
-import Profile from '../components/profile/Profile'
+import HomeStack from './AppStacks/HomeStack'
+import BookedTripsStack from './AppStacks/BookedTripsStack'
+import Profile from '../screens/app/profile/Profile'
 
 const AppStack = createBottomTabNavigator({
 	Home: {
-		screen: Home,
+		screen: HomeStack,
 		navigationOptions: () => ({
 			title: 'Home',
 			tabBarIcon: ({ tintColor }) => (
@@ -20,7 +21,7 @@ const AppStack = createBottomTabNavigator({
 	},
 
 	BookedTrips: {
-		screen: Home,
+		screen: BookedTripsStack,
 		navigationOptions: () => ({
 			title: 'Booked Trips',
 			tabBarIcon: ({ tintColor }) => (
@@ -38,14 +39,13 @@ const AppStack = createBottomTabNavigator({
       ),
 		}),
 	},
-
 },{
-	initialRouteName: 'Profile',
+	initialRouteName: 'Home',
 	tabBarOptions: {
-    activeTintColor: whiteFont,
-    inactiveTintColor: greyFont,
+    activeTintColor: fontColours.white,
+    inactiveTintColor: fontColours.grey,
 		style: {
-			backgroundColor: backgroundPurple,
+			backgroundColor: backgroundColours.purple,
 			borderTopWidth: 0,
 		},
 		labelStyle: {
