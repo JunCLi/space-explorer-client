@@ -15,7 +15,7 @@ const Home = props => {
 	return (
 		<SafeAreaView style={backgroundStyles.background}>
 			<StatusBar barStyle='light-content' />
-			<ScrollView style={backgroundStyles.container} contentContainerStyle={{flexGrow: 1}}>
+			<ScrollView style={backgroundStyles.mainContainer} contentContainerStyle={{flexGrow: 1}}>
 				<AllLaunches {...props} />
 			</ScrollView>
 		</SafeAreaView>

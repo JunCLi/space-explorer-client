@@ -7,11 +7,11 @@ import { baseFont } from '../../stylesheets/screenSizeSettings'
 import { fontColours, backgroundColours } from '../../stylesheets/colours'
 
 const DarkPurpleButton = props => {
-	const { text = 'button text here', buttonFunction, disabled = false } = props
+	const { text = 'button text here', buttonFunction, disabled = false, fontWeight = '500' } = props
 
 	const darkPurpleButton = StyleSheet.create({
 		container: {
-			marginVertical: baseFont * 1.5,
+			marginVertical: baseFont,
 		},
 
 		button: {
@@ -20,6 +20,7 @@ const DarkPurpleButton = props => {
 
 		text: {
 			color: fontColours.white,
+			fontWeight: fontWeight
 		},
 
 		disabledButton: {

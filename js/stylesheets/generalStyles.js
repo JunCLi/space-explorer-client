@@ -23,5 +23,9 @@ export const backgroundStyles = StyleSheet.create({
 		flex: 1,
 		paddingHorizontal: baseSideMargins,
 		paddingBottom: 8,	
+	},
+
+	topContainer: {
+		flex:1,
 	}
 })

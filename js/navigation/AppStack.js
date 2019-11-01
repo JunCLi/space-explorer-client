@@ -7,7 +7,7 @@ import { backgroundColours, fontColours } from '../stylesheets/colours'
 
 import HomeStack from './AppStacks/HomeStack'
 import BookedTripsStack from './AppStacks/BookedTripsStack'
-import Profile from '../components/profile/Profile'
+import Profile from '../screens/app/profile/Profile'
 
 const AppStack = createBottomTabNavigator({
 	Home: {
