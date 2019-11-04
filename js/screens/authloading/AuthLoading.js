@@ -34,14 +34,20 @@ const AuthLoading = props => {
 		)
 	}
 
+	
 	useEffect(() => {
 		if (!loading) {
+			const navParams = props.navigation.state.params
 			if (!error) {
 				storeAuthentication(data.getLoggedUser)
-			} else if (props.navigation.state.params) {
-				storeAuthentication(props.navigation.state.params.user)
+			} else if (navParams) {
+				storeAuthentication(navParams.user)
 			}
-			!error || props.navigation.state.params ? handleGoApp() : handleGoAuthentication()
+
+			const loggedOut = navParams && navParams.loggedOut
+			const signedUp = navParams && navParams.user
+
+			!error && !loggedOut || signedUp ? handleGoApp() : handleGoAuthentication()
 		}
 	}, [data, loading, error])
 	
