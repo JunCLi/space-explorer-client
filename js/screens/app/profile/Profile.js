@@ -15,11 +15,13 @@ const mapStateToProps = state => {
 }
 
 const Profile = props => {
-	const logout = useMutation(LOGOUT)
+	const [logout] = useMutation(LOGOUT)
 
 	const handleLogout = async () => {
-		await logout[0]()
-		props.navigation.navigate('AuthLoading')
+		await logout()
+		props.navigation.navigate('AuthLoading', {
+			loggedOut: true,
+		})
 	}
 
 	const profileList = [

@@ -13,7 +13,7 @@ import { styles } from './styles'
 const AllBookedTrips = props => {
 	const { data, error, loading, fetchMore } = useQuery(GET_BOOKED_TRIPS, {
 		variables: {input: {
-			first: 4,
+			first: 10,
 		}}
 	})
 	const [ disableLoadMore, setDisableLoadMore ] = useState(false)
