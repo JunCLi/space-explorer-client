@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Alert, SafeAreaView, StatusBar, ScrollView, Text, View } from 'react-native'
+import { Alert, Text, View } from 'react-native'
 import { Avatar } from 'react-native-elements'
 
 import { connect } from 'react-redux'
@@ -15,7 +15,7 @@ const mapStateToProps = state => {
 }
 
 const LaunchInfo = props => {
-	const { launch } = props
+	const { bookingDetails, flightDetails } = props.launch
 	const [bookTrip] = useMutation(BOOK_TRIP)
 
 	const [disableButton, setDisableButton] = useState(false)
@@ -25,7 +25,7 @@ const LaunchInfo = props => {
 		try {
 			const result = await bookTrip({
 				variables: {
-					flight_number: launch.flight_number
+					flight_number: flightDetails.flight_number
 				}
 			})
 	
@@ -65,42 +65,39 @@ const LaunchInfo = props => {
 	}
 
 	return (
-		<SafeAreaView style={styles.background}>
-			<StatusBar barStyle='light-content' />
-			<ScrollView style={styles.mainContainer} contentContainerStyle={{flexGrow: 1}}>
-				<View style={styles.infoContainer}>
-					<View style={styles.avatarContainer}>
-						<Avatar
-							overlayContainerStyle={styles.avatarOverlayContainer}
-							source={{ uri: launch.mission_patch }}
-							size={200}
-						/>
-						<Text style={styles.missionName}>{launch.mission_name}</Text>
-					</View>
-
-					<View style={styles.container}>
-						<Text style={styles.rocketInfo}>
-							<Text style={styles.missionInfoLabel}>Rocket Name: </Text>
-							{launch.rocket_name}
-						</Text>
-
-						<Text style={styles.rocketInfo}>
-							<Text style={styles.missionInfoLabel}>Rocket Type: </Text>
-							{launch.rocket_type}
-						</Text>
-						<Text style={styles.launchDetails}>{launch.details}</Text>
-					</View>
+		<>
+			<View style={styles.infoContainer}>
+				<View style={styles.avatarContainer}>
+					<Avatar
+						overlayContainerStyle={styles.avatarOverlayContainer}
+						source={{ uri: flightDetails.mission_patch }}
+						size={200}
+					/>
+					<Text style={styles.missionName}>{flightDetails.mission_name}</Text>
 				</View>
 
 				<View style={styles.container}>
-					<DarkPurpleButton
-						text='Book Flight'
-						buttonFunction={handleBookTrip}
-						disabled={disableButton}
-					/>
+					<Text style={styles.rocketInfo}>
+						<Text style={styles.label}>Rocket Name: </Text>
+						{flightDetails.rocket_name}
+					</Text>
+
+					<Text style={styles.rocketInfo}>
+						<Text style={styles.label}>Rocket Type: </Text>
+						{flightDetails.rocket_type}
+					</Text>
+					<Text style={styles.launchDetails}>{flightDetails.details}</Text>
 				</View>
-			</ScrollView>
-		</SafeAreaView>
+			</View>
+
+			<View style={styles.container}>
+				<DarkPurpleButton
+					text='Book Flight'
+					buttonFunction={handleBookTrip}
+					disabled={disableButton}
+				/>
+			</View>
+		</>
 	)
 }
 
