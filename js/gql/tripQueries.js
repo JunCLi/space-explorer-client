@@ -27,32 +27,6 @@ export const BOOK_TRIP = gql`
 	}
 `
 
-// export const GET_BOOKED_TRIPS = gql`
-// 	query getBookedTrips($input: BookedTripPaginationObject) {
-// 		getBookedTrips(input: $input) {
-// 			pageInfo {
-// 				currentPage
-// 				totalPages
-// 			}
-// 			bookedTrips {
-// 				bookingDetails {
-// 					status
-// 					date_added
-// 				}
-// 				flightDetails {
-// 					flight_number
-// 					rocket_id
-// 					rocket_name
-// 					rocket_type
-// 					details
-// 					mission_name
-// 					mission_patch
-// 					mission_patch_small
-//       	}
-//     	}
-// 		}
-// 	}
-// `
 
 export const GET_BOOKED_TRIPS = gql`
 	query getCursorBookedTrips($input: CursorPaginationObject) {
@@ -79,10 +53,50 @@ export const GET_BOOKED_TRIPS = gql`
 	}
 `
 
-export const TEST_1 = gql`
-	query testAuthenticate {
-		testAuthenticate {
-			message
+export const GET_SINGLE_BOOKED_TRIP = gql`
+	query getSingleBookedTrip($flight_number: ID!) {
+		getBookedTrip(flight_number: $flight_number) {
+			bookingDetails {
+				status
+				date_added
+			}
+			flightDetails {
+				flight_number
+				rocket_id
+				rocket_name
+				rocket_type
+				details
+				mission_name
+				mission_patch
+				mission_patch_small
+			}
 		}
 	}
 `
+
+// export const GET_BOOKED_TRIPS = gql`
+// 	query getBookedTrips($input: BookedTripPaginationObject) {
+// 		getBookedTrips(input: $input) {
+// 			pageInfo {
+// 				currentPage
+// 				totalPages
+// 			}
+// 			bookedTrips {
+// 				bookingDetails {
+// 					status
+// 					date_added
+// 				}
+// 				flightDetails {
+// 					flight_number
+// 					rocket_id
+// 					rocket_name
+// 					rocket_type
+// 					details
+// 					mission_name
+// 					mission_patch
+// 					mission_patch_small
+//       	}
+//     	}
+// 		}
+// 	}
+// `
