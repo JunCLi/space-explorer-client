@@ -44,11 +44,11 @@ const Launch = props => {
 		<SafeAreaView style={styles.background}>
 			<StatusBar barStyle='light-content' />
 			<ScrollView style={styles.mainContainer} contentContainerStyle={{flexGrow: 1}}>
-				{ data.getBookedTrip.bookingDetails.status === 'BOOKED'
+				{/* { data.getBookedTrip.bookingDetails.status === 'BOOKED'
 					? <BookedTripInfo launch={data.getBookedTrip} />
 					: <LaunchInfo launch={data.getBookedTrip} />
-				}
-				{/* <LaunchInfo launch={data.getBookedTrip} /> */}
+				} */}
+				<LaunchInfo launch={data.getBookedTrip} />
 			</ScrollView>
 		</SafeAreaView>
 	)

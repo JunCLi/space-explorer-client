@@ -28,35 +28,21 @@ export const missionInfo = {
 	},
 }
 
-export const avatarStyles = {
-	avatarContainer: {
-		alignItems: 'center',
-		marginTop: screenHeight / 16,
-		marginBottom: screenHeight / 24,
-	},
-
-	avatarOverlayContainer: {
-		backgroundColor: 'transparent',
-	},
-}
-
 export const sharedStyles = StyleSheet.create({
-	...avatarStyles,
 	...missionInfo,
 
 	container: {
 		marginHorizontal: screenWidth / 20,
 	},
 
+	avatarContainer: {
+		alignItems: 'center',
+		marginTop: screenHeight / 16,
+		marginBottom: screenHeight / 40,
+	},
+
 	infoContainer: {
 		...this.container,
 		flex: 1,
-	},
-
-	missionName: {
-		textAlign: 'center',
-		fontSize: baseFont * 3,
-		color: fontColours.white,
-		marginVertical: baseFont * 0.5,
 	},
 })
