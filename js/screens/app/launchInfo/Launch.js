@@ -48,7 +48,7 @@ const Launch = props => {
 					? <BookedTripInfo launch={data.getBookedTrip} />
 					: <LaunchInfo launch={data.getBookedTrip} />
 				} */}
-				<LaunchInfo launch={data.getBookedTrip} />
+				<LaunchInfo launch={data.getBookedTrip} refetch={refetch} />
 			</ScrollView>
 		</SafeAreaView>
 	)

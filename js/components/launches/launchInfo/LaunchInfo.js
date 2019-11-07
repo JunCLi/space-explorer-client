@@ -1,15 +1,16 @@
 import React from 'react'
 
 import { Text, View } from 'react-native'
-// import { Avatar } from 'react-native-elements'
 
 import BookFlightButton from './bookFlightButton/BookFlightButton'
 import BookingDetails from './bookingDetails/BookingDetails'
+import CancelFlightButton from './cancelFlightButton/CancelFlightButton'
 import MissionAvatar from '../../avatars/missionAvatarWithText/MissionAvatar'
 import { styles } from './styles'
 
 const LaunchInfo = props => {
-	const { bookingDetails, flightDetails } = props.launch
+	const { launch, refetch } = props
+	const { bookingDetails, flightDetails } = launch
 
 	return (
 		<>
@@ -35,7 +36,10 @@ const LaunchInfo = props => {
 			</View>
 
 			<View style={styles.container}>
-				<BookFlightButton />
+				{ bookingDetails.status === 'BOOKED'
+					? <CancelFlightButton {...flightDetails} refetch={refetch} />
+					: <BookFlightButton {...flightDetails} refetch={refetch} />
+				}
 			</View>
 		</>
 	)

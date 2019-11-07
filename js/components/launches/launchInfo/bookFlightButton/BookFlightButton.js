@@ -8,15 +8,16 @@ import { BOOK_TRIP } from '../../../../gql/tripQueries'
 import DarkPurpleButton from '../../../Buttons/DarkPurpleButton'
 
 const BookFlightButton = props => {
-	const [disableButton, setDisableButton] = useState(false)
-	const [bookTrip] = useMutation(BOOK_TRIP)
+	const { flight_number, refetch } = props
+	const [ disableButton, setDisableButton ] = useState(false)
+	const [ bookTrip ] = useMutation(BOOK_TRIP)
 
 	const handleBookTrip = async () => {
 		setDisableButton(true)
 		try {
 			const result = await bookTrip({
 				variables: {
-					flight_number: flightDetails.flight_number
+					flight_number: flight_number
 				}
 			})
 	
@@ -51,6 +52,7 @@ const BookFlightButton = props => {
 				throw err
 			}
 		} finally {
+			refetch()
 			setDisableButton(false)
 		}
 	}

@@ -27,6 +27,14 @@ export const BOOK_TRIP = gql`
 	}
 `
 
+export const CANCEL_TRIP = gql`
+	mutation cancelTrip($flight_number: ID) {
+		cancelTrip(flight_number: $flight_number) {
+			message
+		}
+	}
+`
+
 
 export const GET_BOOKED_TRIPS = gql`
 	query getCursorBookedTrips($input: CursorPaginationObject) {
