@@ -7,7 +7,6 @@ import { GET_SINGLE_BOOKED_TRIP } from '../../../gql/tripQueries'
 import { connect } from 'react-redux'
 
 import LaunchInfo from '../../../components/launches/launchInfo/LaunchInfo'
-import BookedTripInfo from '../../../components/launches/bookedTripInfo/BookedTripInfo'
 import { styles } from './styles'
 
 const mapStateToProps = state => {
@@ -15,10 +14,10 @@ const mapStateToProps = state => {
 }
 
 const Launch = props => {
-	const { launch } = props.navigation.state.params
+	const { flightDetails } = props.navigation.state.params
 	const { data, loading, error, refetch } = useQuery(GET_SINGLE_BOOKED_TRIP, {
 		variables: {
-			flight_number: launch.flight_number
+			flight_number: flightDetails.flight_number
 		}
 	})
 
@@ -44,10 +43,6 @@ const Launch = props => {
 		<SafeAreaView style={styles.background}>
 			<StatusBar barStyle='light-content' />
 			<ScrollView style={styles.mainContainer} contentContainerStyle={{flexGrow: 1}}>
-				{/* { data.getBookedTrip.bookingDetails.status === 'BOOKED'
-					? <BookedTripInfo launch={data.getBookedTrip} />
-					: <LaunchInfo launch={data.getBookedTrip} />
-				} */}
 				<LaunchInfo launch={data.getBookedTrip} refetch={refetch} />
 			</ScrollView>
 		</SafeAreaView>

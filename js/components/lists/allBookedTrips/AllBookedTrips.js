@@ -1,22 +1,36 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Text, View } from 'react-native'
 import { Avatar, ListItem } from 'react-native-elements'
 
+import { connect } from 'react-redux'
+import { storeBookingRefresh } from '../../../redux/actions/launchesActions'
 import { useQuery } from 'react-apollo-hooks'
 import { GET_BOOKED_TRIPS } from '../../../gql/tripQueries'
 
 import DarkPurpleButton from '../../Buttons/DarkPurpleButton'
-
 import { styles } from './styles'
 
+// const mapStateToProps = state => {
+// 	// console.log('state: ', state)
+// 	return {}
+// }
+
 const AllBookedTrips = props => {
-	const { data, error, loading, fetchMore } = useQuery(GET_BOOKED_TRIPS, {
+	const { data, error, loading, fetchMore, refetch } = useQuery(GET_BOOKED_TRIPS, {
 		variables: {input: {
 			first: 10,
 		}}
 	})
 	const [ disableLoadMore, setDisableLoadMore ] = useState(false)
+
+	useEffect(() => {
+		if (props.refresh.refreshList) {
+			console.log('update')
+			refetch()
+			props.storeBookingRefresh(false)
+		}
+	},[props.refresh.refreshList])
 
 	if (loading) return <View><Text>Loading...</Text></View>
 	
@@ -34,14 +48,16 @@ const AllBookedTrips = props => {
 				return {
 					getCursorBookedTrips: {
 						...fetchMoreResult.getCursorBookedTrips,
-						bookedTrips: [...previousResult.getCursorBookedTrips.bookedTrips, ...fetchMoreResult.getCursorBookedTrips.bookedTrips],
+						bookedTrips: [...fetchMoreResult.getCursorBookedTrips.bookedTrips, ...previousResult.getCursorBookedTrips.bookedTrips],
 					}
 				}
 			}
 		})
 	}
 
-	console.log('Booked trips data: ', data)
+	const viewMission = flightDetails => {
+		props.navigation.navigate('LaunchInfo', {flightDetails: flightDetails})
+	}
 
 	return (
 		<>
@@ -63,6 +79,7 @@ const AllBookedTrips = props => {
 						subtitle={`Trip Status: ${trip.bookingDetails.status}`}
 						subtitleStyle={styles.missionPreviewSubtitle}
 						containerStyle={styles.missionPreviewContainer}
+						onPress={() => viewMission(trip.flightDetails)}
 					/>
 				))}
 
@@ -79,4 +96,4 @@ const AllBookedTrips = props => {
 	)
 }
 
-export default AllBookedTrips
+export default connect(null, { storeBookingRefresh })(AllBookedTrips)

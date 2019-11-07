@@ -37,8 +37,8 @@ const AllLaunches = props => {
 		})
 	}
 
-	const viewMission = launch => {
-		props.navigation.navigate('LaunchInfo', {launch: launch})
+	const viewMission = flightDetails => {
+		props.navigation.navigate('LaunchInfo', {flightDetails: flightDetails})
 	}
 
 	return (

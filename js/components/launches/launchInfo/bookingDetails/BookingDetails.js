@@ -8,9 +8,6 @@ import { styles } from './styles'
 const BookingDetails = props => {
 	const { status, date_added } = props
 
-	console.log('booking details props: ', props)
-
-
 	return (
 		<View style={styles.container}>
 			<Text style={styles.label}>Booking Info:</Text>

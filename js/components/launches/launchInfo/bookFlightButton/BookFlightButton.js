@@ -2,18 +2,32 @@ import React, { useState } from 'react'
 
 import { Alert } from 'react-native'
 
+import { connect } from 'react-redux'
+import { storeBookingRefresh } from '../../../../redux/actions/launchesActions'
 import { useMutation } from 'react-apollo-hooks'
 import { BOOK_TRIP } from '../../../../gql/tripQueries'
 
 import DarkPurpleButton from '../../../Buttons/DarkPurpleButton'
 
 const BookFlightButton = props => {
-	const { flight_number, refetch } = props
+	const { flight_number, mission_name, refetch } = props
 	const [ disableButton, setDisableButton ] = useState(false)
 	const [ bookTrip ] = useMutation(BOOK_TRIP)
 
-	const handleBookTrip = async () => {
+	const handleButtonPress = () => {
 		setDisableButton(true)
+
+		Alert.alert(
+			`Book Flight: ${mission_name}?`,
+			'Are you sure you want to book',
+			[ 
+				{text: 'Yes', onPress: handleBookTrip},
+				{text: 'No'}
+			]
+		)
+	}
+
+	const handleBookTrip = async () => {
 		try {
 			const result = await bookTrip({
 				variables: {
@@ -53,6 +67,7 @@ const BookFlightButton = props => {
 			}
 		} finally {
 			refetch()
+			props.storeBookingRefresh(true)
 			setDisableButton(false)
 		}
 	}
@@ -60,10 +75,10 @@ const BookFlightButton = props => {
 	return (
 		<DarkPurpleButton
 			text='Book Flight'
-			buttonFunction={handleBookTrip}
+			buttonFunction={handleButtonPress}
 			disabled={disableButton}
 		/>
 	)
 }
 
-export default BookFlightButton
+export default connect(null, { storeBookingRefresh })(BookFlightButton)
