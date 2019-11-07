@@ -28,7 +28,7 @@ const DarkPurpleButton = props => {
 		},
 
 		disabledText: {
-			color: fontColours.lightgrey,
+			color: fontColours.lightGrey,
 		},
 	})
 

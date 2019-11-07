@@ -17,7 +17,7 @@ const HomeStack = createStackNavigator(
 		LaunchInfo: {
 			screen: LaunchInfo,
 			navigationOptions: ({ navigation }) => ({
-				title: navigation.state.params.launch.mission_name
+				title: navigation.state.params.flightDetails.mission_name
 			})
 		}
 	},
